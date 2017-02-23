@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>snowyYU</title>
+  <subtitle>dream passionately</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-01-12T01:46:28.197Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>snowyYU</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>账户系统前端小规范</title>
+    <link href="http://yoursite.com/2017/01/10/%E8%B4%A6%E6%88%B7%E7%B3%BB%E7%BB%9F%E5%89%8D%E7%AB%AF%E5%B0%8F%E8%A7%84%E8%8C%83/"/>
+    <id>http://yoursite.com/2017/01/10/账户系统前端小规范/</id>
+    <published>2017-01-10T12:40:14.000Z</published>
+    <updated>2017-01-12T01:46:28.197Z</updated>
+    
+    <content type="html"><![CDATA[<p>为了后来的开发维护方便，在此写下账户系统前端部分的概述，包括所用框架，依赖，管理工具，命名规范，项目结构等，后面有时间也会总结下前端开发的规范。</p>
+<h1 id="所用框架"><a href="#所用框架" class="headerlink" title="所用框架"></a>所用框架</h1><p>系统所用框架为angular1.3版本，为2016年之前主流版本，前端这几年涌现了太多框架，自己熟悉了这个版本后也要跟上时代的步伐，学习angular2等</p>
+<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>angular参照Java搞出了依赖注入和指令，系统的依赖注入和个部分功能解释如下</p>
+<h2 id="ui-router"><a href="#ui-router" class="headerlink" title="ui-router"></a>ui-router</h2><p>angular1.x 本身有ng-router，但是满足不了复杂的应用，系统采用的<br>依赖为ui-router，ui-router具体用法配置和其自带的指令会单独讲一下。</p>
+<h1 id="管理工具"><a href="#管理工具" class="headerlink" title="管理工具"></a>管理工具</h1><p>包管理工具用了gulp，主要执行如下功能</p>
+<h2 id="css压缩"><a href="#css压缩" class="headerlink" title="css压缩"></a>css压缩</h2><h2 id="js压缩"><a href="#js压缩" class="headerlink" title="js压缩"></a>js压缩</h2><blockquote>
+<p>注意，为了避免压缩时注入的部分被误识别为变量部分，从而导致替换，应写成数组格式的依赖注入，特别是系统采用的angular-ui的modal服务，在实例化时也要写成数组格式的注入，分别如下</p>
+</blockquote>
+<p>1.控制器初始化</p>
+<pre><code> var appModule=angular.module(&quot;app&quot;,[])
+     appModule.controller(&quot;controllerName&quot;,
+                 [&quot;dev1&quot;,&quot;dev2&quot;,function(dev1,dev2){
+   //controller body here
+}])
+</code></pre><p>2.举例modal模态框的</p>
+<pre><code> var modalInstance =$modal.open({
+//配置部分,只显示modal控制器配置，我懒
+controller:modalController
+})
+//by the way 这里可以写modalInstance的promise
+//初始化modal的控制器，采用数组格式的依赖注入
+var modalController =[&quot;dev1&quot;,&quot;dev2&quot;,function(dev1,dev2){
+}]
+</code></pre><blockquote>
+<p>扯远了，那个modal的作用域独立，要resolve进来数据或方法</p>
+</blockquote>
+<h2 id="去注释去空格"><a href="#去注释去空格" class="headerlink" title="去注释去空格"></a>去注释去空格</h2><h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><h1 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h1><blockquote>
+<p>这里只针对本系统给出一定的规范</p>
+</blockquote>
+<p>控制器js文件和模板html名字相同，参照ui-router的命名结构，并相应的将点替换为下短横,ui-sref指令的值命名如下<br>在如总模板页为app,其下的一级菜单为app.Level1NavName,一级菜单下的二级菜单为app.Level1NavName.level2NavName,可参考config.router.js文件的配置，三级相同命名。<br>相应的文件命名Level1NavName_level2NavName.js/html</p>
+<blockquote>
+<p>其中Level1NavName和Level2NavName全系统唯一，注意路由配置的url属性，表现为URL层级</p>
+</blockquote>
+<p>madal弹出框的templete命名为触发事件函数的名称，controller属性的名称命名为函数名加Ctrl，例如</p>
+<pre><code> $scope.appRegisterEdit=function(row){
+   var myrow=row.entity;
+   console.log(myrow);
+   var modalInstance = $modal.open({
+   templateUrl: &apos;appRegisterEdit.html&apos;,
+   controller: appRegisterEditCtrl,
+   resolve: {
+    items: function () {
+      return myrow;
+    },
+    shuaxing: function(){
+      return $scope.shuaxing;
+    },
+    pop:function(){
+      return $scope.pop;
+    }
+   }
+ });
+    modalInstance.result.then(function () {
+}, function () {
+  $scope.shuaxing();
+});
+}
+</code></pre><h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了后来的开发维护方便，在此写下账户系统前端部分的概述，包括所用框架，依赖，管理工具，命名规范，项目结构等，后面有时间也会总结下前端开发的规范。&lt;/p&gt;
+&lt;h1 id=&quot;所用框架&quot;&gt;&lt;a href=&quot;#所用框架&quot; class=&quot;headerlink&quot; title=&quot;所用框架
+    
+    </summary>
+    
+      <category term="work" scheme="http://yoursite.com/categories/work/"/>
+    
+    
+      <category term="工作" scheme="http://yoursite.com/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+      <category term="规范" scheme="http://yoursite.com/tags/%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2016小小结</title>
+    <link href="http://yoursite.com/2017/01/10/2016%E5%B0%8F%E5%B0%8F%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/01/10/2016小小结/</id>
+    <published>2017-01-10T12:38:02.000Z</published>
+    <updated>2017-01-12T01:47:00.762Z</updated>
+    
+    <content type="html"><![CDATA[<p>2016年结束了，回头看来这年经历可真是丰富啊，没去考研，感觉整年都在弥补我的过错，现在想想都觉得我真是太废了，1月6号开始决定敲代码，翻开人生第一本代码书–超简单的headfirst-html。过年因为家庭问题也没有回家，初二便跑回学校，记得当时贝岗只有M记开门（而且还只有我最讨厌的香辣堡卖），真是对自己的惩罚，希望自己能多多记住这种感觉</p>
+<h1 id="学习部分"><a href="#学习部分" class="headerlink" title="学习部分"></a>学习部分</h1><h2 id="总结下今年看的书"><a href="#总结下今年看的书" class="headerlink" title="总结下今年看的书"></a>总结下今年看的书</h2><h3 id="技术上"><a href="#技术上" class="headerlink" title="技术上"></a>技术上</h3><p>1.headfirst-html和css，自己看完的第一本代码书，按照示例敲出了第一个静态页面，现在想想真是挺适合入门的，讲的简单生动<br>2.headfirst-html5,这个看了一半，倒是对html5有了比较浅的了解<br>3.javascript高级程序设计，这个看了一半，必读书籍，新的一年准备和犀牛书再啃一遍<br>4.css权威教程，读了大半，也是当做工具书，需要就去查，很详细<br>5.jq基础，挑着读了些，很多时候需要用到时跑去查找</p>
+<h3 id="others"><a href="#others" class="headerlink" title="others"></a>others</h3><p>1.中国缺了一味药，感觉有些心酸<br>2.时间简史，看了一点点，感觉还是值得一看，全民科普类书籍<br>3.<a href="http://www.cnblogs.com/yangpf/p/4148488.html" target="_blank" rel="external">相对论并非遥不可及</a>，写的相当赞，我竟然看懂啦<br>4.常识，托马斯潘恩的，据说是美国独立战争的反动小册子，感觉看着翻译的版本有点怪<br>5.知乎上收藏了一大把的东西</p>
+<h2 id="学到的技术"><a href="#学到的技术" class="headerlink" title="学到的技术"></a>学到的技术</h2><p>1.前端基础html,css相比较看的较多，js和jq就不够了，自己明白js很重要，<br>2.bootstrap，这个也只能算了解，其核心网格系统也只是勉强会用<br>3.angular，想想听到老大说用angular搭建项目时的一脸懵逼，只能硬着头皮上了，现在也只能说是刚入门，框架自身变化也快，此外第三方的库，angular-ui，ui-router，oclazyload，ng-grid也多少了解些<br>4.ui-grid这个拿出来单独说，因为这个要替代ng-grid了，而且其功能更强大，我也打算将angular项目中的表格替换为ui-grid<br>5.Git，只会些简单的命令，倒是对其了解了些<br>6.gulp，倒是自己尝试配了些简单的命令，</p>
+<blockquote>
+<p>这一年接触的东西不少，深究起来真正懂的一个都没有，这也是下年需要改进的地方</p>
+<h1 id="生活部分"><a href="#生活部分" class="headerlink" title="生活部分"></a>生活部分</h1></blockquote>
+<p>啊哈，还是单身单身，欣慰的是毕业后能和大学好盆友暂时住在一起，延续了些大学的味道，嗯，尝试做了很多次饭（虽然是最简单的烤面包片加鸡蛋），把自己的房间认真装了下，拍死了不少小强，开始独立自己买衣服，年末开始锻炼身体了</p>
+<p>当然，这一年还有个大事件就是我毕业啦，感觉吧，不开心</p>
+<h1 id="工作部分"><a href="#工作部分" class="headerlink" title="工作部分"></a>工作部分</h1><p>在安正实习了下，跑到海豚啦，氛围很好，师兄很赞，还有一堆大学的小伙伴</p>
+<h1 id="吸取的教训"><a href="#吸取的教训" class="headerlink" title="吸取的教训"></a>吸取的教训</h1><p>最大的教训就是最后没去考研，一直以来觉得自己可以坦然面对一些事，现在发现还真是高估了自己，发觉自己还是太容易受环境影响，内心对未知有种惧怕，自己很多时候是准备不足。这种挫败感真是太大了，自己远不如想象的成熟</p>
+<h1 id="新一年给自己"><a href="#新一年给自己" class="headerlink" title="新一年给自己"></a>新一年给自己</h1><p>js很重要，新的一年要重新弄下，<br>1.身体很重要，多跑跑步，可以的话，去健身房吧<br>2.英语<br>3.php，体验下世界上最好的语言</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2016年结束了，回头看来这年经历可真是丰富啊，没去考研，感觉整年都在弥补我的过错，现在想想都觉得我真是太废了，1月6号开始决定敲代码，翻开人生第一本代码书–超简单的headfirst-html。过年因为家庭问题也没有回家，初二便跑回学校，记得当时贝岗只有M记开门（而且还只
+    
+    </summary>
+    
+      <category term="summary" scheme="http://yoursite.com/categories/summary/"/>
+    
+    
+      <category term="回顾" scheme="http://yoursite.com/tags/%E5%9B%9E%E9%A1%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>angular基础</title>
+    <link href="http://yoursite.com/2016/12/26/angular%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2016/12/26/angular基础/</id>
+    <published>2016-12-26T07:39:48.000Z</published>
+    <updated>2016-12-26T11:27:26.650Z</updated>
+    
+    <content type="html"><![CDATA[<p>接触angular已经近半年了，一直在用别人的指令改改，遇到了很多自己解决不了的坑，其实自己对angular的各部分了解并不多，现在回头来弄清其中的用法原理，打好自己的基础。<br><a id="more"></a></p>
+<blockquote>
+<p>准备从如下几个部分展开，每个部分放出参考文章链接以及代码仓库地址</p>
+</blockquote>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><p>1.学习例子参考大漠老师的<a href="http://damoqiongqiu.iteye.com/blog/1917971" target="_blank" rel="external">5个实例详解指令机制</a></p>
+<p>2.<a href="https://segmentfault.com/a/1190000004586636" target="_blank" rel="external">angular指令的transclude选项以及ng-transclude指令</a></p>
+<h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><h1 id="angular核心"><a href="#angular核心" class="headerlink" title="angular核心"></a>angular核心</h1><h1 id="angular原理"><a href="#angular原理" class="headerlink" title="angular原理"></a>angular原理</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;接触angular已经近半年了，一直在用别人的指令改改，遇到了很多自己解决不了的坑，其实自己对angular的各部分了解并不多，现在回头来弄清其中的用法原理，打好自己的基础。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="angular" scheme="http://yoursite.com/categories/angular/"/>
+    
+    
+      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
+    
+      <category term="start" scheme="http://yoursite.com/tags/start/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>angular杂谈</title>
+    <link href="http://yoursite.com/2016/12/26/angular%E6%9D%82%E8%B0%88/"/>
+    <id>http://yoursite.com/2016/12/26/angular杂谈/</id>
+    <published>2016-12-26T07:38:12.000Z</published>
+    <updated>2016-12-26T11:27:08.996Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里来记一些angular相关的东西<br><a id="more"></a></p>
+<h1 id="驼峰命名"><a href="#驼峰命名" class="headerlink" title="驼峰命名"></a>驼峰命名</h1><p>直接上例子，指令中的命名</p>
+<pre><code> var appModule=angular.module(&apos;app&apos;,[]);    
+appModule.directive(&apos;helloWorld&apos;,function(){
+    return{
+        restrict:&apos;e&apos;,
+        template:&apos;&lt;div&gt;hello world~&lt;/div&gt;&apos;,
+        replace:true
+    };
+    })
+</code></pre><p>html中</p>
+<pre><code>&lt;hello-world&gt;&lt;/hello-world&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里来记一些angular相关的东西&lt;br&gt;
+    
+    </summary>
+    
+      <category term="angular" scheme="http://yoursite.com/categories/angular/"/>
+    
+    
+      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
+    
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sublime 安装小结</title>
+    <link href="http://yoursite.com/2016/12/22/sublime-%E5%AE%89%E8%A3%85%E5%B0%8F%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/12/22/sublime-安装小结/</id>
+    <published>2016-12-22T06:44:17.000Z</published>
+    <updated>2017-02-09T02:12:05.235Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="sublime-3"><a href="#sublime-3" class="headerlink" title="sublime 3"></a>sublime 3</h1><p>sublime大家都知道啦，用了近一年了，感情颇深。之前用了sublime2，感觉最大的不同是sublime3的启动速度飞快，之后一直在用别人放出来装了各种插件的3，结果近几个月想要下载新的插件时发现竟然装不了，哈，值此一周年之际，自己重新捣鼓下3.<br><a id="more"></a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装就不多说了，官网<a href="https://www.sublimetext.com/3" title="sublime3下载" target="_blank" rel="external">sublime3下载</a>。</p>
+<blockquote>
+<p>需要注意，最好在翻墙状态下，反正我没翻墙下不了。</p>
+</blockquote>
+<p>安装可以选中<strong>explorer context menu</strong>选项，意思是右击时显示open with sublime，方便编辑，不想显示中文可以去注册表改一下</p>
+<p><img src="http://i.imgur.com/UyAYoF3.png" alt=""></p>
+<p>重点来了，额，不购买的话会一直提示，比较烦</p>
+<blockquote>
+<p>最好有条件还是支持正版</p>
+</blockquote>
+<p>在简书上看到注册码<a href="http://www.jianshu.com/p/04e1b65dd2c0" title="sublime3注册码" target="_blank" rel="external">sublime3注册码</a><br>博主也在定期更新（非常感谢大神，大神的博客很赞）。help中填入注册码就行啦</p>
+<blockquote>
+<p>留一下，有好几个的，填一个就行啦</p>
+</blockquote>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><ul>
+<li>直接装</li>
+</ul>
+<p>preferences&gt;browse packages…</p>
+<p><img src="http://hiphotos.baidu.com/exp/pic/item/0e655ca7d933c8954e7c86f6d31373f0830200f9.jpg" alt=""></p>
+<p>下载地址：<a href="https://sublime.wbond.net/Package%20Control.sublime-package" title="package control" target="_blank" rel="external">package control</a></p>
+<p>放进去:</p>
+<p><img src="http://hiphotos.baidu.com/exp/pic/item/8a95ad1c8701a18b4eb90cc29c2f07082938feaa.jpg" alt=""></p>
+<blockquote>
+<p>建议用这个方法，我试了用console命令报错 好像是can not open XXX<br>,换了另外一个网上的命令可以下，但是速度很慢</p>
+</blockquote>
+<ul>
+<li>用package control组件安装</li>
+</ul>
+<p>这个不多说啦，附上官方介绍</p>
+<p><a href="https://packagecontrol.io/installation" title="packagecontrol installation" target="_blank" rel="external">packagecontrol installation</a></p>
+<h2 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h2><blockquote>
+<p>这里只记录我接触到的</p>
+</blockquote>
+<p>插件的安装嘛，ctrl+shift+p调出控制台，选到package controll install，然后等，再次弹出控制台输入想要安装的插件，选中 安装 等待</p>
+<p>注意要留意下方的状态</p>
+<ol>
+<li><p>emmet<br>神器，谁用谁知道，补全代码等等，附上用法<br><a href="https://packagecontrol.io/packages/Emmet" title="Emmet" target="_blank" rel="external">Emmet</a></p>
+</li>
+<li><p>markdownEditing<br>这个用来写博客，记得先ctrl+shift+p设置成markdown格式，写这篇文就遇到个坑，我用的<a href="markdownpad" title="http://markdownpad.com/">markdownpad</a>的图床是 <a href="Imgur" title="http://imgur.com/">Imgur</a>，额，不翻墙上传不了图片</p>
+</li>
+<li><p>angular<br>对于指令和服务，鼠标移上去可以看到初始化的地方</p>
+</li>
+<li><p>sublimeLinter<br>语法错误检测，</p>
+</li>
+<li><p>SideBarEnhancements<br>侧栏右键功能增强</p>
+</li>
+<li><p>Alignment<br>等号对齐（Ctrl+Alt+A）</p>
+</li>
+<li><p>Bracket Highlighter<br>代码匹配</p>
+</li>
+<li><p>prettify<br>HTML-CSS-JS Prettify  code format  代码格式化</p>
+</li>
+</ol>
+<p>持续更新中  …</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;sublime-3&quot;&gt;&lt;a href=&quot;#sublime-3&quot; class=&quot;headerlink&quot; title=&quot;sublime 3&quot;&gt;&lt;/a&gt;sublime 3&lt;/h1&gt;&lt;p&gt;sublime大家都知道啦，用了近一年了，感情颇深。之前用了sublime2，感觉最大的不同是sublime3的启动速度飞快，之后一直在用别人放出来装了各种插件的3，结果近几个月想要下载新的插件时发现竟然装不了，哈，值此一周年之际，自己重新捣鼓下3.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="sublime" scheme="http://yoursite.com/categories/sublime/"/>
+    
+    
+      <category term="sublime" scheme="http://yoursite.com/tags/sublime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My First Post</title>
+    <link href="http://yoursite.com/2016/12/22/My-First-Post/"/>
+    <id>http://yoursite.com/2016/12/22/My-First-Post/</id>
+    <published>2016-12-22T06:24:47.000Z</published>
+    <updated>2016-12-22T06:38:47.411Z</updated>
+    
+    <content type="html"><![CDATA[<p>**试试</p>
+<p>发一篇试试效果</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;**试试&lt;/p&gt;
+&lt;p&gt;发一篇试试效果&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/12/22/hello-world/"/>
+    <id>http://yoursite.com/2016/12/22/hello-world/</id>
+    <published>2016-12-22T03:12:21.937Z</published>
+    <updated>2016-12-22T03:12:21.950Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
