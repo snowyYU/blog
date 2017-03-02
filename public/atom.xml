@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-12T01:46:28.197Z</updated>
+  <updated>2017-03-02T07:26:22.529Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,97 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node(一)</title>
+    <link href="http://yoursite.com/2017/03/01/node-%E4%B8%80/"/>
+    <id>http://yoursite.com/2017/03/01/node-一/</id>
+    <published>2017-03-01T12:31:32.000Z</published>
+    <updated>2017-03-02T07:26:22.529Z</updated>
+    
+    <content type="html"><![CDATA[<p>开始正式学习node，之前看过node即学即用，敲了遍书上的代码，有点晕晕的，之后很长时间没接触node了，现在下决心每天花些时间捣鼓下。<br><a id="more"></a></p>
+<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>在这里主要是记笔记，按照教程尝试搭建使用 Express + MongoDB 搭建多人博客，记录些要点和体会</p>
+<blockquote>
+<p>参考了<a href="https://github.com/nswbmw/N-blog" target="_blank" rel="external">使用 Express + MongoDB 搭建多人博客</a></p>
+<h1 id="安装配置环境"><a href="#安装配置环境" class="headerlink" title="安装配置环境"></a>安装配置环境</h1></blockquote>
+<p>安装nodejs，LTS是长期支持版本，current是最新版，支持最新语言特性(比如更全的es6)</p>
+<p>n和nvm是两个常用的nodejs版本管理工具，nvm不支持windows</p>
+<blockquote>
+<p>参考<a href="http://taobaofed.org/blog/2015/11/17/nvm-or-n/" target="_blank" rel="external">这个</a><br>还有阮一峰老师的<a href="http://es6.ruanyifeng.com/#docs/intro" target="_blank" rel="external">es6入门</a></p>
+</blockquote>
+<p>nrm管理npm源的工具，目测修改了源之后npm==cnpm了</p>
+<p>安装mongoDB遇到一个坑，执行</p>
+<pre><code>&quot;C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe&quot; --dbpath F:\practice\mongo
+</code></pre><p>报错</p>
+<pre><code> $ &quot;C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe&quot; --dbpath F:\practice\mongo
+17-03-02T14:55:01.854+0800 I CONTROL  [initandlisten] MongoDB starting :     d=7440 port=27017 dbpath=F:practicemongo 64-bit host=DESKTOP-KP92M3V
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] targetMinOS: Windows 7/    ndows Server 2008 R2
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] db version v3.4.2
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] git version:     76e40c105fc223b3e5aac3e20dcd026b83b38b
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] OpenSSL version:     enSSL 1.0.1u-fips  22 Sep 2016
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] modules: none
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] build environment:
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten]     distmod:     08plus-ssl
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten]     distarch: x86_64
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] options: { storage: {     Path: &quot;F:practicemongo&quot; } }
+17-03-02T14:55:01.855+0800 I STORAGE  [initandlisten] exception in     itAndListen: 29 Data directory F:practicemongo not found., terminating
+17-03-02T14:55:01.855+0800 I NETWORK  [initandlisten] shutdown: going to     ose listening sockets...
+17-03-02T14:55:01.855+0800 I NETWORK  [initandlisten] shutdown: going to     ush diaglog...
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] now exiting
+17-03-02T14:55:01.855+0800 I CONTROL  [initandlisten] shutting down with     de:100
+</code></pre><p>说F:practicemongo not found，不知道为什么会这样，直接执行</p>
+<pre><code>&quot;C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe&quot;
+</code></pre><p>又说 F:\data\db\ not found.</p>
+<p>我就只好在F盘下新建data\db，然后就成功了</p>
+<p>打开Robomongo,<a href="http://blog.robomongo.org/" target="_blank" rel="external">Robomongo</a> 是一个基于 Shell 的跨平台开源 MongoDB 可视化管理工具，支持 Windows、Linux 和 Mac，嵌入了 JavaScript 引擎和 MongoDB mongo，</p>
+<blockquote>
+<p>试着插入一条数据结果不知道怎样看不到了</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开始正式学习node，之前看过node即学即用，敲了遍书上的代码，有点晕晕的，之后很长时间没接触node了，现在下决心每天花些时间捣鼓下。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="node" scheme="http://yoursite.com/categories/node/"/>
+    
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>value和ng-value</title>
+    <link href="http://yoursite.com/2017/02/23/value%E5%92%8Cng-value/"/>
+    <id>http://yoursite.com/2017/02/23/value和ng-value/</id>
+    <published>2017-02-23T08:01:37.000Z</published>
+    <updated>2017-02-23T13:01:15.277Z</updated>
+    
+    <content type="html"><![CDATA[<p>开年第一篇，前两周赶进度特别忙，基本重构了整个系统，也踩了不少的坑，其中就有angular指令ng-value和value这俩货</p>
+<blockquote>
+<p>类似的还有ng-disabled和disabled等</p>
+</blockquote>
+<p>官方给出说ngValue</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开年第一篇，前两周赶进度特别忙，基本重构了整个系统，也踩了不少的坑，其中就有angular指令ng-value和value这俩货&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;类似的还有ng-disabled和disabled等&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;官方给出
+    
+    </summary>
+    
+    
+      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
+    
+  </entry>
   
   <entry>
     <title>账户系统前端小规范</title>
@@ -191,9 +282,9 @@ appModule.directive(&apos;helloWorld&apos;,function(){
       <category term="angular" scheme="http://yoursite.com/categories/angular/"/>
     
     
-      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
-    
       <category term="others" scheme="http://yoursite.com/tags/others/"/>
+    
+      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
     
   </entry>
   
