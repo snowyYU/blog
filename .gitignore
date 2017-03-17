@@ -1,0 +1,4 @@
+# ignore these below
+public/
+.deploy/
+themes/
