@@ -1,4 +1,5 @@
 # ignore these below
 public/
-.deploy/
+.deploy_git/
 themes/
+node_modules
