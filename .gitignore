@@ -3,3 +3,4 @@ public/
 .deploy_git/
 themes/
 node_modules
+db.json
