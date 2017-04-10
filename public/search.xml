@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[样式规范(一)]]></title>
+      <url>%2F2017%2F03%2F14%2F%E6%A0%B7%E5%BC%8F%E8%A7%84%E8%8C%83-%E4%B8%80%2F</url>
+      <content type="text"><![CDATA[为提高开发效率，特定了一些规范 前记 github需要以下几点的储备 1.less2.媒体查询3.before和after4.熟练的掌握css的选择器5.查询条件一栏间距可以写死 tips 这里用来记一下 命名关键字大小xxs，xs，sm，空，md，lg，xl，xxl size,你懂的 还有，full 位置top，bottom，left，right，middle 自适应(媒体查询)范围在此less部分用到的函数lighten和darken 提高／降低颜色的亮度 HSL即色相、饱和度、亮度 色相（H）是色彩的基本属性，就是平常所说的颜色名称，如红色、黄色等。 饱和度（S）是指色彩的纯度，越高色彩越纯，低则逐渐变灰，取0-100%的数值。 明度（V），亮度（L），取0-100%。用法lighten(color,percent)；]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[js回顾(一)]]></title>
+      <url>%2F2017%2F03%2F06%2Fjs%E5%9B%9E%E9%A1%BE-%E4%B8%80%2F</url>
+      <content type="text"><![CDATA[回头巩固下自己的js基础， 闭包开头放自己读过觉得很赞的相关文章 阮一峰闭包 -感觉 js中proto和prototype的区别和关系？常说js中一切都是对象，但基本数据类型不是对象，基本数据类型没有方法和属性 ，当我们调用方法时候会封装出一个对象，（wrapper对象是什么）首先，几乎所有对象都有[[prototype]]属性，在es5中这是个隐藏属性，指向此对象的原型。es5中用Object.getPrototypeOf函数获得一个对象的[[prototype]]。es6中，使用Object.setPrototypeOf可以直接修改一个对象的[[prototype]] 很多浏览器都给每个对象提供proto属性(不标准，不推荐用)，我觉得可以理解为就是[[prototype]]， 1.方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具有属性proto，可称为隐式原型，一个对象的隐式原型指向构造该对象的构造函数的原型，这也保证了实例能够访问在构造函数原型中定义的属性和方法。2.方法(Function)方法这个特殊的对象，除了和其他对象一样有上述proto属性之外，还有自己特有的属性——原型属性（prototype），这个属性是一个指针，指向一个对象，这个对象的用途就是包含所有实例共享的属性和方法（我们把这个对象叫做原型对象）。原型对象也有一个属性，叫做constructor，这个属性包含了一个指针，指回原构造函数。好啦，知道了这两个基本点，我们来看看上面这副图。1.构造函数Foo()构造函数的原型属性Foo.prototype指向了原型对象，在原型对象里有共有的方法，所有构造函数声明的实例（这里是f1，f2）都可以共享这个方法。2.原型对象Foo.prototypeFoo.prototype保存着实例共享的方法，有一个指针constructor指回构造函数。3.实例f1和f2是Foo这个对象的两个实例，这两个对象也有属性proto，指向构造函数的原型对象，这样子就可以像上面1所说的访问原型对象的所有方法啦。另外：构造函数Foo()除了是方法，也是对象啊，它也有proto属性，指向谁呢？指向它的构造函数的原型对象呗。函数的构造函数不就是Function嘛，因此这里的proto指向了Function.prototype。其实除了Foo()，Function(), Object()也是一样的道理。原型对象也是对象啊，它的proto属性，又指向谁呢？同理，指向它的构造函数的原型对象呗。这里是Object.prototype.最后，Object.prototype的proto属性指向null。总结：1.对象有属性proto,指向该对象的构造函数的原型对象。2.方法除了有属性proto,还有属性prototype，prototype指向该方法的原型对象。 看一下几种常见构造一个对象的方法，决定了一个对象的[[prototype]]属性1.通过对象字面量构造 var contact={ name:&quot;zhao&quot;, sex:&quot;male&quot; } 通过此方法构造的对象，其[[prototype]]指向Object.prototype 2.通过构造函数 fuction Contact(){} var contact1=new Contact(){} contact1.__proto__==Contact.prototype //true 每个函数都有一个prototype属性，其所指向的对象带有constructor属性，这一属性指向函数自身,eg,本例中，Contact.prototype.constructor==Contact 3.通过函数Object.create构造 var contact={ name:&quot;zhao&quot;, sex:&quot;male&quot; } var contact1=Object.create(contact); contact1的[[prototype]]指向contact]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[node(一)]]></title>
       <url>%2F2017%2F03%2F01%2Fnode-%E4%B8%80%2F</url>
       <content type="text"><![CDATA[开始正式学习node，之前看过node即学即用，敲了遍书上的代码，有点晕晕的，之后很长时间没接触node了，现在下决心每天花些时间捣鼓下。 写在前面在这里主要是记笔记，按照教程尝试搭建使用 Express + MongoDB 搭建多人博客，记录些要点和体会 参考了使用 Express + MongoDB 搭建多人博客 安装配置环境 安装nodejs，LTS是长期支持版本，current是最新版，支持最新语言特性(比如更全的es6) n和nvm是两个常用的nodejs版本管理工具，nvm不支持windows 参考这个还有阮一峰老师的es6入门 nrm管理npm源的工具，目测修改了源之后npm==cnpm了 安装mongoDB遇到一个坑，执行 &quot;C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe&quot; --dbpath F:\practice\mongo 报错 $ &quot;C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe&quot; --dbpath F:\practice\mongo 17-03-02T14:55:01.854+0800 I CONTROL [initandlisten] MongoDB starting : d=7440 port=27017 dbpath=F:practicemongo 64-bit host=DESKTOP-KP92M3V 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] targetMinOS: Windows 7/ ndows Server 2008 R2 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] db version v3.4.2 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] git version: 76e40c105fc223b3e5aac3e20dcd026b83b38b 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] OpenSSL version: enSSL 1.0.1u-fips 22 Sep 2016 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] allocator: tcmalloc 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] modules: none 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] build environment: 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] distmod: 08plus-ssl 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] distarch: x86_64 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] target_arch: x86_64 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] options: { storage: { Path: &quot;F:practicemongo&quot; } } 17-03-02T14:55:01.855+0800 I STORAGE [initandlisten] exception in itAndListen: 29 Data directory F:practicemongo not found., terminating 17-03-02T14:55:01.855+0800 I NETWORK [initandlisten] shutdown: going to ose listening sockets... 17-03-02T14:55:01.855+0800 I NETWORK [initandlisten] shutdown: going to ush diaglog... 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] now exiting 17-03-02T14:55:01.855+0800 I CONTROL [initandlisten] shutting down with de:100 说F:practicemongo not found，不知道为什么会这样，直接执行 &quot;C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe&quot; 又说 F:\data\db\ not found. 我就只好在F盘下新建data\db，然后就成功了 打开Robomongo,Robomongo 是一个基于 Shell 的跨平台开源 MongoDB 可视化管理工具，支持 Windows、Linux 和 Mac，嵌入了 JavaScript 引擎和 MongoDB mongo， 试着插入一条数据结果不知道怎样看不到了]]></content>
@@ -33,14 +47,14 @@
     <entry>
       <title><![CDATA[angular基础]]></title>
       <url>%2F2016%2F12%2F26%2Fangular%E5%9F%BA%E7%A1%80%2F</url>
-      <content type="text"><![CDATA[接触angular已经近半年了，一直在用别人的指令改改，遇到了很多自己解决不了的坑，其实自己对angular的各部分了解并不多，现在回头来弄清其中的用法原理，打好自己的基础。 准备从如下几个部分展开，每个部分放出参考文章链接以及代码仓库地址 指令1.学习例子参考大漠老师的5个实例详解指令机制 2.angular指令的transclude选项以及ng-transclude指令 服务angular核心angular原理]]></content>
+      <content type="text"><![CDATA[接触angular已经近半年了，一直在用别人的指令改改，遇到了很多自己解决不了的坑，其实自己对angular的各部分了解并不多，现在回头来弄清其中的用法原理，打好自己的基础。 准备从如下几个部分展开，每个部分放出参考文章链接以及代码仓库地址 tisps1.module.run()方法在注射器加载完所有模块是执行一次 指令 先记几个核心问题1.指令的运行原理：comile与link(操作元素，添加CSS样式，绑定事件)2.指令与控制器之间的交互3.指令间的交互4.scope的类型与独立scope5.scope的绑定策略6.angularjs内置指令(63)7.Expander,Accordion8.directive思想的起源和原理概述 指令有三个阶段， 1.加载阶段&gt;&gt;&gt;2.编译阶段&gt;&gt;&gt;3.链接阶段 1.加载angular.js，找到ng-app指令，确定应用的边界 2.遍历DOM，找到所有指令；根据指令代码中的temlate,replace,transclue转换DOM结构；如果存在compile函数则调用； 3.对每一条指令运行link函数；link函数一般用来操作DOM，绑定事件监听器； compile函数用来对模板自身进行转换，而link函数负责在模型和视图之间进行动态关联；作用域在链接阶段才会被绑定到编译后的link函数上；compile函数仅仅在编译阶段运行一次，而对于指令的每个实例，link函数都会执行一次；compile可以返回preLink和postLink函数，而link函数只会返回postLink函数；如果需要修改DOM结构，应该在postLink中来做这件事，而如果在preLink中做这件事会导致错误；大多数时候我们只要写link函数即可 1.学习例子参考大漠老师的5个实例详解指令机制 2.angular指令的transclude选项以及ng-transclude指令 服务angular核心angular原理]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[angular杂谈]]></title>
       <url>%2F2016%2F12%2F26%2Fangular%E6%9D%82%E8%B0%88%2F</url>
-      <content type="text"><![CDATA[这里来记一些angular相关的东西 驼峰命名直接上例子，指令中的命名 var appModule=angular.module(&apos;app&apos;,[]); appModule.directive(&apos;helloWorld&apos;,function(){ return{ restrict:&apos;e&apos;, template:&apos;&lt;div&gt;hello world~&lt;/div&gt;&apos;, replace:true }; }) html中 &lt;hello-world&gt;&lt;/hello-world&gt;]]></content>
+      <content type="text"><![CDATA[这里来记一些angular相关的东西 驼峰命名直接上例子，指令中的命名 var appModule=angular.module(&apos;app&apos;,[]); appModule.directive(&apos;helloWorld&apos;,function(){ return{ restrict:&apos;e&apos;, template:&apos;&lt;div&gt;hello world~&lt;/div&gt;&apos;, replace:true }; }) html中 &lt;hello-world&gt;&lt;/hello-world&gt; service和factory 参考地址1.segmentfault2.AngularJS: Service vs provider vs factory3.官网api,$provider4.What is the type friendly injection? -service和factory本质都是provider的shortcut-‘provider’是唯一一种可以创建用来注入到config()函数的服务的方式。想在你的服务启动之前，进行一些模块化的配置的话，就使用provider 在官方文档中,auto模块中的服务有且仅有$injuector和$provider对auto模块解释为 自动获取并添加到每个注入器的隐含模块]]></content>
     </entry>
 
     

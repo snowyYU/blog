@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/26/angular基础/index.html">
 <meta property="og:site_name" content="snowyYU">
 <meta property="og:description" content="接触angular已经近半年了，一直在用别人的指令改改，遇到了很多自己解决不了的坑，其实自己对angular的各部分了解并不多，现在回头来弄清其中的用法原理，打好自己的基础。">
-<meta property="og:updated_time" content="2016-12-26T11:27:26.650Z">
+<meta property="og:updated_time" content="2017-03-10T06:14:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular基础">
 <meta name="twitter:description" content="接触angular已经近半年了，一直在用别人的指令改改，遇到了很多自己解决不了的坑，其实自己对angular的各部分了解并不多，现在回头来弄清其中的用法原理，打好自己的基础。">
@@ -416,7 +416,21 @@
 <blockquote>
 <p>准备从如下几个部分展开，每个部分放出参考文章链接以及代码仓库地址</p>
 </blockquote>
-<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><p>1.学习例子参考大漠老师的<a href="http://damoqiongqiu.iteye.com/blog/1917971" target="_blank" rel="external">5个实例详解指令机制</a></p>
+<h1 id="tisps"><a href="#tisps" class="headerlink" title="tisps"></a>tisps</h1><p>1.module.run()方法在注射器加载完所有模块是执行一次</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><blockquote>
+<p>先记几个核心问题<br>1.指令的运行原理：comile与link(操作元素，添加CSS样式，绑定事件)<br>2.指令与控制器之间的交互<br>3.指令间的交互<br>4.scope的类型与独立scope<br>5.scope的绑定策略<br>6.angularjs内置指令(63)<br>7.Expander,Accordion<br>8.directive思想的起源和原理概述</p>
+</blockquote>
+<p>指令有三个阶段，</p>
+<blockquote>
+<p>1.<code>加载阶段</code>&gt;&gt;&gt;2.<code>编译阶段</code>&gt;&gt;&gt;3.<code>链接阶段</code></p>
+</blockquote>
+<p>1.加载angular.js，找到ng-app指令，确定应用的边界</p>
+<p>2.遍历DOM，找到所有指令；根据指令代码中的temlate,replace,transclue转换DOM结构；如果存在compile函数则调用；</p>
+<p>3.对每一条指令运行link函数；link函数一般用来操作DOM，绑定事件监听器；</p>
+<blockquote>
+<p>compile函数用来对模板自身进行转换，而link函数负责在模型和视图之间进行动态关联；<br>作用域在链接阶段才会被绑定到编译后的link函数上；<br>compile函数仅仅在编译阶段运行一次，而对于指令的每个实例，link函数都会执行一次；<br>compile可以返回preLink和postLink函数，而link函数只会返回postLink函数；<br>如果需要修改DOM结构，应该在postLink中来做这件事，而如果在preLink中做这件事会导致错误；<br>大多数时候我们只要写link函数即可  </p>
+</blockquote>
+<p>1.学习例子参考大漠老师的<a href="http://damoqiongqiu.iteye.com/blog/1917971" target="_blank" rel="external">5个实例详解指令机制</a></p>
 <p>2.<a href="https://segmentfault.com/a/1190000004586636" target="_blank" rel="external">angular指令的transclude选项以及ng-transclude指令</a></p>
 <h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><h1 id="angular核心"><a href="#angular核心" class="headerlink" title="angular核心"></a>angular核心</h1><h1 id="angular原理"><a href="#angular原理" class="headerlink" title="angular原理"></a>angular原理</h1>
       
@@ -538,7 +552,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -556,7 +570,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -598,7 +612,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务"><span class="nav-number">2.</span> <span class="nav-text">服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#angular核心"><span class="nav-number">3.</span> <span class="nav-text">angular核心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#angular原理"><span class="nav-number">4.</span> <span class="nav-text">angular原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tisps"><span class="nav-number">1.</span> <span class="nav-text">tisps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">2.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务"><span class="nav-number">3.</span> <span class="nav-text">服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#angular核心"><span class="nav-number">4.</span> <span class="nav-text">angular核心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#angular原理"><span class="nav-number">5.</span> <span class="nav-text">angular原理</span></a></li></ol></div>
             
 
           </div>

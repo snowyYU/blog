@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-02T07:26:22.529Z</updated>
+  <updated>2017-04-10T14:49:51.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,106 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>样式规范(一)</title>
+    <link href="http://yoursite.com/2017/03/14/%E6%A0%B7%E5%BC%8F%E8%A7%84%E8%8C%83-%E4%B8%80/"/>
+    <id>http://yoursite.com/2017/03/14/样式规范-一/</id>
+    <published>2017-03-14T11:12:41.000Z</published>
+    <updated>2017-04-10T14:49:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>为提高开发效率，特定了一些规范<br><a id="more"></a></p>
+<h1 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h1><blockquote>
+<p><a href="">github</a><br>需要以下几点的储备</p>
+</blockquote>
+<p>1.less<br>2.媒体查询<br>3.before和after<br>4.熟练的掌握css的选择器<br>5.查询条件一栏间距可以写死</p>
+<h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><blockquote>
+<p>这里用来记一下</p>
+</blockquote>
+<h1 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h1><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h3><p>xxs，xs，sm，空，md，lg，xl，xxl</p>
+<blockquote>
+<p>size,你懂的</p>
+</blockquote>
+<p>还有，full</p>
+<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><p>top，bottom，left，right，middle</p>
+<h1 id="自适应-媒体查询"><a href="#自适应-媒体查询" class="headerlink" title="自适应(媒体查询)"></a>自适应(媒体查询)</h1><h2 id="范围在此"><a href="#范围在此" class="headerlink" title="范围在此"></a>范围在此</h2><h1 id="less部分用到的函数"><a href="#less部分用到的函数" class="headerlink" title="less部分用到的函数"></a>less部分用到的函数</h1><h2 id="lighten和darken"><a href="#lighten和darken" class="headerlink" title="lighten和darken"></a>lighten和darken</h2><blockquote>
+<p>提高／降低颜色的亮度</p>
+</blockquote>
+<p>HSL即色相、饱和度、亮度</p>
+<ul>
+<li>色相（H）是色彩的基本属性，就是平常所说的颜色名称，如红色、黄色等。</li>
+<li>饱和度（S）是指色彩的纯度，越高色彩越纯，低则逐渐变灰，取0-100%的数值。</li>
+<li>明度（V），亮度（L），取0-100%。<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3>lighten(color,percent)；</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为提高开发效率，特定了一些规范&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js回顾(一)</title>
+    <link href="http://yoursite.com/2017/03/06/js%E5%9B%9E%E9%A1%BE-%E4%B8%80/"/>
+    <id>http://yoursite.com/2017/03/06/js回顾-一/</id>
+    <published>2017-03-06T07:18:25.000Z</published>
+    <updated>2017-03-09T11:05:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>回头巩固下自己的js基础，</p>
+<h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>开头放自己读过觉得很赞的相关文章</p>
+<blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" target="_blank" rel="external">阮一峰闭包</a></p>
+</blockquote>
+<p>-感觉</p>
+<h1 id="js中proto和prototype的区别和关系？"><a href="#js中proto和prototype的区别和关系？" class="headerlink" title="js中proto和prototype的区别和关系？"></a>js中<strong>proto</strong>和prototype的区别和关系？</h1><p>常说js中一切都是对象，但基本数据类型不是对象，基本数据类型没有方法和属性 ，当我们调用方法时候会封装出一个对象，（wrapper对象是什么）<br>首先，几乎所有对象都有[[prototype]]属性，在es5中这是个隐藏属性，指向此对象的原型。es5中用Object.getPrototypeOf函数获得一个对象的[[prototype]]。es6中，使用Object.setPrototypeOf可以直接修改一个对象的[[prototype]]</p>
+<blockquote>
+<p>很多浏览器都给每个对象提供<strong>proto</strong>属性(不标准，不推荐用)，我觉得可以理解为就是[[prototype]]，<br><img src="http://i.imgur.com/0G4COrD.png" alt="关系图"></p>
+</blockquote>
+<p>1.方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具有属性<strong>proto</strong>，可称为隐式原型，一个对象的隐式原型指向构造该对象的构造函数的原型，这也保证了实例能够访问在构造函数原型中定义的属性和方法。<br>2.方法(Function)方法这个特殊的对象，除了和其他对象一样有上述<em>proto</em>属性之外，还有自己特有的属性——原型属性（prototype），这个属性是一个指针，指向一个对象，这个对象的用途就是包含所有实例共享的属性和方法（我们把这个对象叫做原型对象）。原型对象也有一个属性，叫做constructor，这个属性包含了一个指针，指回原构造函数。好啦，知道了这两个基本点，我们来看看上面这副图。<br>1.构造函数Foo()构造函数的原型属性Foo.prototype指向了原型对象，在原型对象里有共有的方法，所有构造函数声明的实例（这里是f1，f2）都可以共享这个方法。<br>2.原型对象Foo.prototypeFoo.prototype保存着实例共享的方法，有一个指针constructor指回构造函数。<br>3.实例f1和f2是Foo这个对象的两个实例，这两个对象也有属性<strong>proto</strong>，指向构造函数的原型对象，这样子就可以像上面1所说的访问原型对象的所有方法啦。另外：构造函数Foo()除了是方法，也是对象啊，它也有<strong>proto</strong>属性，指向谁呢？指向它的构造函数的原型对象呗。函数的构造函数不就是Function嘛，因此这里的<strong>proto</strong>指向了Function.prototype。其实除了Foo()，Function(), Object()也是一样的道理。原型对象也是对象啊，它的<strong>proto</strong>属性，又指向谁呢？同理，指向它的构造函数的原型对象呗。这里是Object.prototype.最后，Object.prototype的<strong>proto</strong>属性指向null。<br>总结：<br>1.对象有属性<strong>proto</strong>,指向该对象的构造函数的原型对象。<br>2.方法除了有属性<strong>proto</strong>,还有属性prototype，prototype指向该方法的原型对象。</p>
+<p>看一下几种常见构造一个对象的方法，决定了一个对象的[[prototype]]属性<br>1.通过对象字面量构造</p>
+<pre><code>var contact={
+    name:&quot;zhao&quot;,
+    sex:&quot;male&quot;
+}
+</code></pre><p>通过此方法构造的对象，其[[prototype]]指向Object.prototype</p>
+<p>2.通过构造函数</p>
+<pre><code>fuction Contact(){}
+var contact1=new Contact(){}
+contact1.__proto__==Contact.prototype //true
+</code></pre><p>每个函数都有一个prototype属性，其所指向的对象带有constructor属性，这一属性指向函数自身,eg,本例中，Contact.prototype.constructor==Contact</p>
+<p>3.通过函数Object.create构造</p>
+<pre><code>var contact={
+    name:&quot;zhao&quot;,
+    sex:&quot;male&quot;
+}
+var contact1=Object.create(contact);
+</code></pre><p>contact1的[[prototype]]指向contact</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;回头巩固下自己的js基础，&lt;/p&gt;
+&lt;h1 id=&quot;闭包&quot;&gt;&lt;a href=&quot;#闭包&quot; class=&quot;headerlink&quot; title=&quot;闭包&quot;&gt;&lt;/a&gt;闭包&lt;/h1&gt;&lt;p&gt;开头放自己读过觉得很赞的相关文章&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;htt
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>node(一)</title>
     <link href="http://yoursite.com/2017/03/01/node-%E4%B8%80/"/>
     <id>http://yoursite.com/2017/03/01/node-一/</id>
     <published>2017-03-01T12:31:32.000Z</published>
-    <updated>2017-03-02T07:26:22.529Z</updated>
+    <updated>2017-03-02T07:26:24.000Z</updated>
     
     <content type="html"><![CDATA[<p>开始正式学习node，之前看过node即学即用，敲了遍书上的代码，有点晕晕的，之后很长时间没接触node了，现在下决心每天花些时间捣鼓下。<br><a id="more"></a></p>
 <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>在这里主要是记笔记，按照教程尝试搭建使用 Express + MongoDB 搭建多人博客，记录些要点和体会</p>
@@ -82,7 +177,7 @@
     <link href="http://yoursite.com/2017/02/23/value%E5%92%8Cng-value/"/>
     <id>http://yoursite.com/2017/02/23/value和ng-value/</id>
     <published>2017-02-23T08:01:37.000Z</published>
-    <updated>2017-02-23T13:01:15.277Z</updated>
+    <updated>2017-02-23T13:01:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>开年第一篇，前两周赶进度特别忙，基本重构了整个系统，也踩了不少的坑，其中就有angular指令ng-value和value这俩货</p>
 <blockquote>
@@ -111,7 +206,7 @@
     <link href="http://yoursite.com/2017/01/10/%E8%B4%A6%E6%88%B7%E7%B3%BB%E7%BB%9F%E5%89%8D%E7%AB%AF%E5%B0%8F%E8%A7%84%E8%8C%83/"/>
     <id>http://yoursite.com/2017/01/10/账户系统前端小规范/</id>
     <published>2017-01-10T12:40:14.000Z</published>
-    <updated>2017-01-12T01:46:28.197Z</updated>
+    <updated>2017-01-12T01:46:30.000Z</updated>
     
     <content type="html"><![CDATA[<p>为了后来的开发维护方便，在此写下账户系统前端部分的概述，包括所用框架，依赖，管理工具，命名规范，项目结构等，后面有时间也会总结下前端开发的规范。</p>
 <h1 id="所用框架"><a href="#所用框架" class="headerlink" title="所用框架"></a>所用框架</h1><p>系统所用框架为angular1.3版本，为2016年之前主流版本，前端这几年涌现了太多框架，自己熟悉了这个版本后也要跟上时代的步伐，学习angular2等</p>
@@ -193,7 +288,7 @@ var modalController =[&quot;dev1&quot;,&quot;dev2&quot;,function(dev1,dev2){
     <link href="http://yoursite.com/2017/01/10/2016%E5%B0%8F%E5%B0%8F%E7%BB%93/"/>
     <id>http://yoursite.com/2017/01/10/2016小小结/</id>
     <published>2017-01-10T12:38:02.000Z</published>
-    <updated>2017-01-12T01:47:00.762Z</updated>
+    <updated>2017-01-12T01:47:02.000Z</updated>
     
     <content type="html"><![CDATA[<p>2016年结束了，回头看来这年经历可真是丰富啊，没去考研，感觉整年都在弥补我的过错，现在想想都觉得我真是太废了，1月6号开始决定敲代码，翻开人生第一本代码书–超简单的headfirst-html。过年因为家庭问题也没有回家，初二便跑回学校，记得当时贝岗只有M记开门（而且还只有我最讨厌的香辣堡卖），真是对自己的惩罚，希望自己能多多记住这种感觉</p>
 <h1 id="学习部分"><a href="#学习部分" class="headerlink" title="学习部分"></a>学习部分</h1><h2 id="总结下今年看的书"><a href="#总结下今年看的书" class="headerlink" title="总结下今年看的书"></a>总结下今年看的书</h2><h3 id="技术上"><a href="#技术上" class="headerlink" title="技术上"></a>技术上</h3><p>1.headfirst-html和css，自己看完的第一本代码书，按照示例敲出了第一个静态页面，现在想想真是挺适合入门的，讲的简单生动<br>2.headfirst-html5,这个看了一半，倒是对html5有了比较浅的了解<br>3.javascript高级程序设计，这个看了一半，必读书籍，新的一年准备和犀牛书再啃一遍<br>4.css权威教程，读了大半，也是当做工具书，需要就去查，很详细<br>5.jq基础，挑着读了些，很多时候需要用到时跑去查找</p>
@@ -227,13 +322,27 @@ var modalController =[&quot;dev1&quot;,&quot;dev2&quot;,function(dev1,dev2){
     <link href="http://yoursite.com/2016/12/26/angular%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursite.com/2016/12/26/angular基础/</id>
     <published>2016-12-26T07:39:48.000Z</published>
-    <updated>2016-12-26T11:27:26.650Z</updated>
+    <updated>2017-03-10T06:14:54.000Z</updated>
     
     <content type="html"><![CDATA[<p>接触angular已经近半年了，一直在用别人的指令改改，遇到了很多自己解决不了的坑，其实自己对angular的各部分了解并不多，现在回头来弄清其中的用法原理，打好自己的基础。<br><a id="more"></a></p>
 <blockquote>
 <p>准备从如下几个部分展开，每个部分放出参考文章链接以及代码仓库地址</p>
 </blockquote>
-<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><p>1.学习例子参考大漠老师的<a href="http://damoqiongqiu.iteye.com/blog/1917971" target="_blank" rel="external">5个实例详解指令机制</a></p>
+<h1 id="tisps"><a href="#tisps" class="headerlink" title="tisps"></a>tisps</h1><p>1.module.run()方法在注射器加载完所有模块是执行一次</p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><blockquote>
+<p>先记几个核心问题<br>1.指令的运行原理：comile与link(操作元素，添加CSS样式，绑定事件)<br>2.指令与控制器之间的交互<br>3.指令间的交互<br>4.scope的类型与独立scope<br>5.scope的绑定策略<br>6.angularjs内置指令(63)<br>7.Expander,Accordion<br>8.directive思想的起源和原理概述</p>
+</blockquote>
+<p>指令有三个阶段，</p>
+<blockquote>
+<p>1.<code>加载阶段</code>&gt;&gt;&gt;2.<code>编译阶段</code>&gt;&gt;&gt;3.<code>链接阶段</code></p>
+</blockquote>
+<p>1.加载angular.js，找到ng-app指令，确定应用的边界</p>
+<p>2.遍历DOM，找到所有指令；根据指令代码中的temlate,replace,transclue转换DOM结构；如果存在compile函数则调用；</p>
+<p>3.对每一条指令运行link函数；link函数一般用来操作DOM，绑定事件监听器；</p>
+<blockquote>
+<p>compile函数用来对模板自身进行转换，而link函数负责在模型和视图之间进行动态关联；<br>作用域在链接阶段才会被绑定到编译后的link函数上；<br>compile函数仅仅在编译阶段运行一次，而对于指令的每个实例，link函数都会执行一次；<br>compile可以返回preLink和postLink函数，而link函数只会返回postLink函数；<br>如果需要修改DOM结构，应该在postLink中来做这件事，而如果在preLink中做这件事会导致错误；<br>大多数时候我们只要写link函数即可  </p>
+</blockquote>
+<p>1.学习例子参考大漠老师的<a href="http://damoqiongqiu.iteye.com/blog/1917971" target="_blank" rel="external">5个实例详解指令机制</a></p>
 <p>2.<a href="https://segmentfault.com/a/1190000004586636" target="_blank" rel="external">angular指令的transclude选项以及ng-transclude指令</a></p>
 <h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><h1 id="angular核心"><a href="#angular核心" class="headerlink" title="angular核心"></a>angular核心</h1><h1 id="angular原理"><a href="#angular原理" class="headerlink" title="angular原理"></a>angular原理</h1>]]></content>
     
@@ -257,7 +366,7 @@ var modalController =[&quot;dev1&quot;,&quot;dev2&quot;,function(dev1,dev2){
     <link href="http://yoursite.com/2016/12/26/angular%E6%9D%82%E8%B0%88/"/>
     <id>http://yoursite.com/2016/12/26/angular杂谈/</id>
     <published>2016-12-26T07:38:12.000Z</published>
-    <updated>2016-12-26T11:27:08.996Z</updated>
+    <updated>2017-03-06T08:58:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>这里来记一些angular相关的东西<br><a id="more"></a></p>
 <h1 id="驼峰命名"><a href="#驼峰命名" class="headerlink" title="驼峰命名"></a>驼峰命名</h1><p>直接上例子，指令中的命名</p>
@@ -271,7 +380,12 @@ appModule.directive(&apos;helloWorld&apos;,function(){
     })
 </code></pre><p>html中</p>
 <pre><code>&lt;hello-world&gt;&lt;/hello-world&gt;
-</code></pre>]]></content>
+</code></pre><h1 id="service和factory"><a href="#service和factory" class="headerlink" title="service和factory"></a>service和factory</h1><blockquote>
+<p>参考地址<br>1.<a href="https://segmentfault.com/a/1190000003096933" target="_blank" rel="external">segmentfault</a><br>2.<a href="http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory?rq=1" target="_blank" rel="external">AngularJS: Service vs provider vs factory</a><br>3.<a href="https://docs.angularjs.org/api/auto/service/$provide" target="_blank" rel="external">官网api,$provider</a><br>4.<a href="http://stackoverflow.com/questions/25667321/what-is-the-type-friendly-injection" target="_blank" rel="external">What is the type friendly injection?</a></p>
+</blockquote>
+<p>-service和factory本质都是provider的shortcut<br>-‘provider’是唯一一种可以创建用来注入到config()函数的服务的方式。想在你的服务启动之前，进行一些模块化的配置的话，就使用provider</p>
+<p>在官方文档中,auto模块中的服务有且仅有$injuector和$provider<br>对auto模块解释为 自动获取并添加到每个注入器的隐含模块</p>
+]]></content>
     
     <summary type="html">
     
@@ -293,7 +407,7 @@ appModule.directive(&apos;helloWorld&apos;,function(){
     <link href="http://yoursite.com/2016/12/22/sublime-%E5%AE%89%E8%A3%85%E5%B0%8F%E7%BB%93/"/>
     <id>http://yoursite.com/2016/12/22/sublime-安装小结/</id>
     <published>2016-12-22T06:44:17.000Z</published>
-    <updated>2017-02-09T02:12:05.235Z</updated>
+    <updated>2017-02-09T02:12:06.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="sublime-3"><a href="#sublime-3" class="headerlink" title="sublime 3"></a>sublime 3</h1><p>sublime大家都知道啦，用了近一年了，感情颇深。之前用了sublime2，感觉最大的不同是sublime3的启动速度飞快，之后一直在用别人放出来装了各种插件的3，结果近几个月想要下载新的插件时发现竟然装不了，哈，值此一周年之际，自己重新捣鼓下3.<br><a id="more"></a></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装就不多说了，官网<a href="https://www.sublimetext.com/3" title="sublime3下载" target="_blank" rel="external">sublime3下载</a>。</p>
@@ -370,7 +484,7 @@ appModule.directive(&apos;helloWorld&apos;,function(){
     <link href="http://yoursite.com/2016/12/22/My-First-Post/"/>
     <id>http://yoursite.com/2016/12/22/My-First-Post/</id>
     <published>2016-12-22T06:24:47.000Z</published>
-    <updated>2016-12-22T06:38:47.411Z</updated>
+    <updated>2016-12-22T06:38:48.000Z</updated>
     
     <content type="html"><![CDATA[<p>**试试</p>
 <p>发一篇试试效果</p>
@@ -393,8 +507,8 @@ appModule.directive(&apos;helloWorld&apos;,function(){
     <title>Hello World</title>
     <link href="http://yoursite.com/2016/12/22/hello-world/"/>
     <id>http://yoursite.com/2016/12/22/hello-world/</id>
-    <published>2016-12-22T03:12:21.937Z</published>
-    <updated>2016-12-22T03:12:21.950Z</updated>
+    <published>2016-12-22T03:12:22.000Z</published>
+    <updated>2016-12-22T03:12:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>

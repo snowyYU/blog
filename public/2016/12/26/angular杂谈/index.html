@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/26/angular杂谈/index.html">
 <meta property="og:site_name" content="snowyYU">
 <meta property="og:description" content="这里来记一些angular相关的东西">
-<meta property="og:updated_time" content="2016-12-26T11:27:08.996Z">
+<meta property="og:updated_time" content="2017-03-06T08:58:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular杂谈">
 <meta name="twitter:description" content="这里来记一些angular相关的东西">
@@ -424,7 +424,12 @@ appModule.directive(&apos;helloWorld&apos;,function(){
     })
 </code></pre><p>html中</p>
 <pre><code>&lt;hello-world&gt;&lt;/hello-world&gt;
-</code></pre>
+</code></pre><h1 id="service和factory"><a href="#service和factory" class="headerlink" title="service和factory"></a>service和factory</h1><blockquote>
+<p>参考地址<br>1.<a href="https://segmentfault.com/a/1190000003096933" target="_blank" rel="external">segmentfault</a><br>2.<a href="http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory?rq=1" target="_blank" rel="external">AngularJS: Service vs provider vs factory</a><br>3.<a href="https://docs.angularjs.org/api/auto/service/$provide" target="_blank" rel="external">官网api,$provider</a><br>4.<a href="http://stackoverflow.com/questions/25667321/what-is-the-type-friendly-injection" target="_blank" rel="external">What is the type friendly injection?</a></p>
+</blockquote>
+<p>-service和factory本质都是provider的shortcut<br>-‘provider’是唯一一种可以创建用来注入到config()函数的服务的方式。想在你的服务启动之前，进行一些模块化的配置的话，就使用provider</p>
+<p>在官方文档中,auto模块中的服务有且仅有$injuector和$provider<br>对auto模块解释为 自动获取并添加到每个注入器的隐含模块</p>
+
       
     </div>
 
@@ -544,7 +549,7 @@ appModule.directive(&apos;helloWorld&apos;,function(){
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -562,7 +567,7 @@ appModule.directive(&apos;helloWorld&apos;,function(){
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -604,7 +609,7 @@ appModule.directive(&apos;helloWorld&apos;,function(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#驼峰命名"><span class="nav-number">1.</span> <span class="nav-text">驼峰命名</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#驼峰命名"><span class="nav-number">1.</span> <span class="nav-text">驼峰命名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#service和factory"><span class="nav-number">2.</span> <span class="nav-text">service和factory</span></a></li></ol></div>
             
 
           </div>
