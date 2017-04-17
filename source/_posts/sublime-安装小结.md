@@ -68,7 +68,9 @@ preferences>browse packages...
 对于指令和服务，鼠标移上去可以看到初始化的地方
 
 4. sublimeLinter
-语法错误检测，
+语法错误检测，这个组件依赖于nodeJS下的jshint，所以还要通过npm安装jshint的jshint
+
+    npm install -g jshint
 
 5. SideBarEnhancements
 侧栏右键功能增强
@@ -81,6 +83,16 @@ preferences>browse packages...
 
 8. prettify
 HTML-CSS-JS Prettify  code format  代码格式化
+
+9. color Highlighter
+实时看到颜色
+
+10. html/js/css prettify
+ctrl+shift+h一键格式，代码对齐啥的
+
+11. localhistory 
+历史记录
+
 
 持续更新中  ...
 
