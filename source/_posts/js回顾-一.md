@@ -15,6 +15,7 @@ tags: js
 常说js中一切都是对象，但基本数据类型不是对象，基本数据类型没有方法和属性 ，当我们调用方法时候会封装出一个对象，（wrapper对象是什么）
 首先，几乎所有对象都有[[prototype]]属性，在es5中这是个隐藏属性，指向此对象的原型。es5中用Object.getPrototypeOf函数获得一个对象的[[prototype]]。es6中，使用Object.setPrototypeOf可以直接修改一个对象的[[prototype]]
 >很多浏览器都给每个对象提供__proto__属性(不标准，不推荐用)，我觉得可以理解为就是[[prototype]]，
+
 ![关系图](http://i.imgur.com/0G4COrD.png)
 
 1.方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具有属性__proto__，可称为隐式原型，一个对象的隐式原型指向构造该对象的构造函数的原型，这也保证了实例能够访问在构造函数原型中定义的属性和方法。
