@@ -45,6 +45,30 @@ compile可以返回preLink和postLink函数，而link函数只会返回postLink�
 大多数时候我们只要写link函数即可  
 
 ## 配置含义 ##
+练习指令时偶尔发现安装的sublime插件自动补全，如下格式
+
+    app.directive('', ['', function(){
+    // Runs during compile
+    return {
+        // name: '',
+        // priority: 1,
+        // terminal: true,
+        // scope: {}, // {} = isolate, true = child, false/undefined = no change
+        // controller: function($scope, $element, $attrs, $transclude) {},
+        // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+        // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
+        // template: '',
+        // templateUrl: '',
+        // replace: true,
+        // transclude: true,
+        // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+        link: function($scope, iElm, iAttrs, controller) {
+            
+        }
+    };
+    }]);
+
+对各个属性都有注释，做个参考吧
 
 ### replace ###
 replace 属性为 true 时，指令标签会被 templete中的内容替换掉，如
@@ -63,11 +87,17 @@ replace 属性为 true 时，指令标签会被 templete中的内容替换掉，
 ### transclude ###
 值为true时保留指令包裹的内容
 
+### scope ###
+作用域，用来隔离指令与所在控制器间的作用域、隔离指令与指令间的作用域
+
+
 ## 参考资料 ##
 
 1.学习例子参考大漠老师的[5个实例详解指令机制](http://damoqiongqiu.iteye.com/blog/1917971)
 
 2.[angular指令的transclude选项以及ng-transclude指令](https://segmentfault.com/a/1190000004586636)
+
+3.[directive和controller通信](http://www.tuicool.com/articles/aAveEj)
 
 # 服务 #
 # angular核心 #
