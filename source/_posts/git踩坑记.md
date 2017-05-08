@@ -15,3 +15,10 @@ categories: git
 >附上链接
 >[git忽略已经被提交的文件](https://segmentfault.com/q/1010000000430426)
 >[.gitignore 文件无效的解决方法](http://www.ifeegoo.com/git-code-management-dot-gitignore-file-has-no-effect-solution.html)
+
+2. 常见的git删除
+
+    git rm XXX.xx
+
+如果误删了可采用`git checkout`
+>`git checkout`其实是用版本库里的版本替换工作区的版本，无论工作区修改还是删除，都可以使用此还原

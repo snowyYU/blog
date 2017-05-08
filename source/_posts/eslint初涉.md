@@ -24,10 +24,12 @@ eslint 还是挺强大的，相较于jshint
 
 ## 在sublime 安装 eslint 插件 ##
 
-安装
+### 安装 ###
 
 1. SublimeLinter
 2. SublimeLinter-contrib-eslint
+
+### 配置 ###
 
 在项目根目录编写配置文件
 
@@ -48,6 +50,9 @@ eslint 还是挺强大的，相较于jshint
         "quotes": [2, "single"]
     }
     }
+
+sublime 编辑器内Prefernces > Pakage Settings > SublimeLinter > Settings-User
+debug设置为true
 
 it works
 

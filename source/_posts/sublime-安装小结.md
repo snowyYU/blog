@@ -93,6 +93,15 @@ ctrl+shift+h一键格式，代码对齐啥的
 11. localhistory 
 历史记录
 
+------
+>2017.5
+
+12. nodejs
+支持对node的语法补全等
+
+13. SublimeLinter-contrib-eslint
+使用eslint来进行代码规范检查
+
 
 持续更新中  ...
 
