@@ -38,4 +38,6 @@ categories: js
 
 >[皮卡丘的讲解](https://github.com/dwqs/blog/issues/18)
 
->[segmentfault作用域javascript](https://segmentfault.com/a/1190000004676747)
+>[segmentfault作用域javascript1](https://segmentfault.com/a/1190000004676747)
+
+>[segmentfault作用域javascript2](https://segmentfault.com/a/1190000008614579)
