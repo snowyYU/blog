@@ -41,3 +41,7 @@ categories: js
 >[segmentfault作用域javascript1](https://segmentfault.com/a/1190000004676747)
 
 >[segmentfault作用域javascript2](https://segmentfault.com/a/1190000008614579)
+
+>[segmentfault作用域javascript3](https://segmentfault.com/a/1190000000533094)
+
+>[讲了执行环境和变量对象的创建和执行过程，很有用](https://segmentfault.com/a/1190000009247123)
