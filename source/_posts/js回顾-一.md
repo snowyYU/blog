@@ -4,12 +4,41 @@ date: 2017-03-06 15:18:25
 tags: js
 ---
 
-回头巩固下自己的js基础，
-# 闭包 #
-开头放自己读过觉得很赞的相关文章
->[阮一峰闭包](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)
+# 对象和原型 #
+## 几种常见的创建对象方法##
+1.通过对象字面量构造
 
--感觉
+    var contact1={
+        name:"zhao",
+        sex:"male"
+    }
+
+通过此方法构造的对象，其[[prototype]]指向Object.prototype
+
+2.通过构造函数
+
+    function Contact(name,sex){
+        this.name=name;
+        this.sex=sex;
+        this.getName=function(){
+            return name;
+        }
+    }
+    var contact1=new Contact()
+    contact1.__proto__==Contact.prototype //true
+
+每个函数都有一个prototype属性，其所指向的对象带有constructor属性，这一属性指向函数自身,eg,本例中，Contact.prototype.constructor==Contact
+
+3.通过函数Object.create构造
+
+    var contact={
+        name:"zhao",
+        sex:"male"
+    }
+    var contact1=Object.create(contact);
+
+contact1的[[prototype]]指向contact
+
 
 # js中__proto__和prototype的区别和关系？ #
 常说js中一切都是对象，但基本数据类型不是对象，基本数据类型没有方法和属性 ，当我们调用方法时候会封装出一个对象，（wrapper对象是什么）
@@ -28,29 +57,6 @@ tags: js
 2.方法除了有属性__proto__,还有属性prototype，prototype指向该方法的原型对象。
 
 看一下几种常见构造一个对象的方法，决定了一个对象的[[prototype]]属性
-1.通过对象字面量构造
 
-    var contact={
-        name:"zhao",
-        sex:"male"
-    }
-
-通过此方法构造的对象，其[[prototype]]指向Object.prototype
-
-2.通过构造函数
-
-    fuction Contact(){}
-    var contact1=new Contact(){}
-    contact1.__proto__==Contact.prototype //true
-
-每个函数都有一个prototype属性，其所指向的对象带有constructor属性，这一属性指向函数自身,eg,本例中，Contact.prototype.constructor==Contact
-
-3.通过函数Object.create构造
-
-    var contact={
-        name:"zhao",
-        sex:"male"
-    }
-    var contact1=Object.create(contact);
-
-contact1的[[prototype]]指向contact
+# 参考 #
+>[对象与原型](http://blog.csdn.net/u010425776/article/details/53617292)

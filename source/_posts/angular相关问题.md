@@ -9,6 +9,9 @@ categories: angular
 
 # dirty check (脏值检验) #
 
+
+
+
 # 相关链接 #
 1. [官网FAQ](https://docs.angularjs.org/misc/faq)
 2. [知乎-如何衡量一个人的angular水平](https://www.zhihu.com/question/36040694)
