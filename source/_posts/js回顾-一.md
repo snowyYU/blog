@@ -2,6 +2,7 @@
 title: js回顾(一)
 date: 2017-03-06 15:18:25
 tags: js
+categories: js
 ---
 
 # 对象和原型 #

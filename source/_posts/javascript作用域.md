@@ -26,6 +26,8 @@ categories: js
 
 # 图解过程 #
 
+## step1 ##
+
     //myScript.js 
     "use strict"    
     var a=1;
@@ -34,6 +36,7 @@ categories: js
 如图，开始时，创建全局执行环境并被推入执行环境栈
 ![p1](http://i.imgur.com/FcKggu2.png)
 
+## step2 ##
     //myScript.js 
     "use strict"    
     var a=1;
@@ -41,10 +44,42 @@ categories: js
     function foo(){
         var c=3;
         var d=4;
+        console.log(c+d);
     }
 执行至`function foo(){}`也就是函数创建时，food的标识符(identifier)被加到当前(栗子中是全局变量对象)中,并且这个标识符引用了一个函数对象，函数对象中不仅包含了函数的源代码等还有[[scope]],[[Scope]]属性中保存了一条用来初始化作用域链，其指向就是当前的变量对象(全局变量对象)
 >注意此时并没创建函数相应的执行环境
 ![p2](http://i.imgur.com/GGGcGON.png)
+
+## step3 ##
+    //myScript.js 
+    "use strict"    
+    var a=1;
+    var b=2; 
+    function foo(){
+        var c=3;
+        var d=4;
+        console.log(c+d);
+    };
+    foo();
+
+执行至`foo()`,函数被调用，产生相应的执行环境，之后被推入执行环境栈顶，
+
+>此时产生的执行环境中的作用域链由之前函数定义时的[[scope]]而来，作用链的前端为foo的变量对象，由于这个环境是函数，创建活动对象并将其作为变量对象
+![p3](http://i.imgur.com/ocIbFzQ.png)
+
+## step4 ##
+调用foo()结束后，其执行环境会被弹出执行栈，
+![p4](http://i.imgur.com/gDcXp4r.png)
+
+# tips #
+
+1.作用域链是本质上是一个指向变量对象的指针列表，它只是引用但不实际包含变量对象。
+2.AO中包含了函数的形参、arguments对象、this对象、以及局部变量和内部函数的定义，然后AO会被推入作用域链的顶端。
+>感觉AO和VO里的内容差不多
+
+
+# EC和VO的产生过程 #
+当函数被调用时进入EC的产生阶段
 
 
 # 相关阅读 #
