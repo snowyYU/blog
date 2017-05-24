@@ -102,6 +102,8 @@ ctrl+shift+h一键格式，代码对齐啥的
 13. SublimeLinter-contrib-eslint
 使用eslint来进行代码规范检查
 
+14. Vue Syntax Highlight
+.vue结尾的代码也会变得五颜六色
 
 持续更新中  ...
 
