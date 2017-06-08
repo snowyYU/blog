@@ -22,3 +22,20 @@ categories: git
 
 如果误删了可采用`git checkout`
 >`git checkout`其实是用版本库里的版本替换工作区的版本，无论工作区修改还是删除，都可以使用此还原
+
+3. 新增远程仓库地址
+
+    git add remote [<options>] <name> <url>
+    //例子
+    git add remote origin https://github.com/snowyYU/x.git
+
+name 为远程主机的名字
+
+4. push，push，push
+
+    git push -u origin master
+
+这里只想说一下-u参数，设置了这个之后，pull fetch push啥的默认连接的为origin master
+
+>[知乎git push 的 -u 参数具体适合含义](https://www.zhihu.com/question/20019419)
+
