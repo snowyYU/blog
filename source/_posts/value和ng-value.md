@@ -28,4 +28,8 @@ tags: angular
 这里要特别注意ng-if和ng-show的区别
 
 ng-if = false 时，相应的标签元素在调试器里消失（不知道是否被移出了dom），且不占空间。而
-ng-show = false 时 相应的的元素还是在dom中的， 
+ng-show = false 时 相应的的元素还是在dom中的，
+
+如下
+* ng-if 在后面表达式为 true 的时候才创建这个 dom 节点，ng-show 是初始时就创建了，用 display:block 和 display:none 来控制显示和不显示。
+* ng-if 会（隐式地）产生新作用域，ng-switch 、 ng-include 等会动态创建一块界面的也是如此。 
