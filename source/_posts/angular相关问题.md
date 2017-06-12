@@ -28,6 +28,7 @@ $digest 循环开始执行，查询每个 $watch 是否变化
 浏览器拿回控制器，更新 $scope.val 新值对应的 dom
 $digest 循环的上限是 10 次（超过 10次后抛出一个异常，防止无限循环）。
 
+>自己感觉吧，绑定在$scope上的变量都会被监听，有变化时会刷新整个$scope上的队列。
 
 # 相关链接 #
 1. [官网FAQ](https://docs.angularjs.org/misc/faq)
