@@ -39,3 +39,27 @@ name 为远程主机的名字
 
 >[知乎git push 的 -u 参数具体适合含义](https://www.zhihu.com/question/20019419)
 
+4. merge 报错
+
+今天在pull时出现了一个问题，过程是这样的，我新建了远程仓库时顺带初始化了readme,结果本地pull时报错，如下
+    fatal: refusing to merge unrelated histories
+就是它觉得我两个仓库没啥关联，然后我尝试push，报错如下
+    $ git push -u origin master
+    To https://github.com/snowyYU/center-solution.git
+    ! [rejected]        master -> master (non-fast-forward)
+    error: failed to push some refs to 'https://github.com/snowyYU/center-solution.git'
+    hint: Updates were rejected because the tip of your current branch is behind
+    hint: its remote counterpart. Integrate the remote changes (e.g.
+    hint: 'git pull ...') before pushing again.
+    hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+说我本地仓库版本过时啦，叫我先pull
+
+没办法，只能强上了，加上参数
+    git pull origin master --allow-unrelated-histories
+
+之后会进入vim让我输入commit message，
+>[stackoverflow](https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories)
+>[vim命令看这里](http://www.jianshu.com/p/eae20fcde419)
+
+    
