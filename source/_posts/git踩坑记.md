@@ -39,7 +39,7 @@ name 为远程主机的名字
 
 >[知乎git push 的 -u 参数具体适合含义](https://www.zhihu.com/question/20019419)
 
-4. merge 报错
+5. merge 报错
 
 今天在pull时出现了一个问题，过程是这样的，我新建了远程仓库时顺带初始化了readme,结果本地pull时报错，如下
     fatal: refusing to merge unrelated histories
@@ -63,3 +63,10 @@ name 为远程主机的名字
 >[vim命令看这里](http://www.jianshu.com/p/eae20fcde419)
 
     
+6. 查看更改处
+
+    git diff
+
+上图:
+
+![gitDiff](http://i.imgur.com/QJamb2Z.jpg)
