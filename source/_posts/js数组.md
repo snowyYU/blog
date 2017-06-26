@@ -176,8 +176,11 @@ indexOf()从
 ## 归并方法 ##
 
 
+# 其他 #
+jq中，数组操作新增了each()
 
-# 类数组 #
+# 伪数组 #
+像数组，有和数组相同的属性和方法，如length等。
  * nodelist
  * argument
 
