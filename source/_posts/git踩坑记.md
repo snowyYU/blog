@@ -70,3 +70,22 @@ name 为远程主机的名字
 上图:
 
 ![gitDiff](http://i.imgur.com/QJamb2Z.jpg)
+
+7. 创建,切换分支
+
+今天在看webpack官网的指南时候，发现各部分练习的代码挺不一样，又想起之前看angularjs时官网给出的phonecat，他们项目各个构建步骤被创建成一个个branch，感觉十分方便，所以我仿照试下
+
+    git checkout -b XXX
+
+这个命令相当于
+
+    git branch XXX    //新建XXX分支
+    git checkout XXX  //切换到XXX分支
+
+现在就切换到XXX分支了，可以在gitbash中看到，然后我直接
+    
+    git push origin XXX
+
+其实此时远程仓库中并没有XXX分支，执行此命令后，远程仓库会新建XXX分支，并push成功。 
+
+
