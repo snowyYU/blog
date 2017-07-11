@@ -8,7 +8,8 @@ categories: git
 总是容易忘记git的一些命令和用法，在此记下我重复google的，哈哈，比较无序，足够多时再分类。
 <!--more-->
 
-1. git中如果文件已被加入跟踪队列，后续添加相应的.gitignore参数时其相应的改变仍会被监听，采用如下
+# 将文件移除监听队列 #
+git中如果文件已被加入跟踪队列，后续添加相应的.gitignore参数时其相应的改变仍会被监听，采用如下
 
     git rm --cached XX/xx.x
 
@@ -16,14 +17,14 @@ categories: git
 >[git忽略已经被提交的文件](https://segmentfault.com/q/1010000000430426)
 >[.gitignore 文件无效的解决方法](http://www.ifeegoo.com/git-code-management-dot-gitignore-file-has-no-effect-solution.html)
 
-2. 常见的git删除
+# 常见的git删除 #
 
     git rm XXX.xx
 
 如果误删了可采用`git checkout`
 >`git checkout`其实是用版本库里的版本替换工作区的版本，无论工作区修改还是删除，都可以使用此还原
 
-3. 新增远程仓库地址
+# 新增远程仓库地址 #
 
     git add remote [<options>] <name> <url>
     //例子
@@ -31,7 +32,7 @@ categories: git
 
 name 为远程主机的名字
 
-4. push，push，push
+# push，push，push #
 
     git push -u origin master
 
@@ -39,7 +40,7 @@ name 为远程主机的名字
 
 >[知乎git push 的 -u 参数具体适合含义](https://www.zhihu.com/question/20019419)
 
-5. merge 报错
+# merge 报错 #
 
 今天在pull时出现了一个问题，过程是这样的，我新建了远程仓库时顺带初始化了readme,结果本地pull时报错，如下
     fatal: refusing to merge unrelated histories
@@ -63,7 +64,7 @@ name 为远程主机的名字
 >[vim命令看这里](http://www.jianshu.com/p/eae20fcde419)
 
     
-6. 查看更改处
+# 查看更改处 #
 
     git diff
 
@@ -71,7 +72,7 @@ name 为远程主机的名字
 
 ![gitDiff](http://i.imgur.com/QJamb2Z.jpg)
 
-7. 创建,切换分支
+# 创建,切换分支 #
 
 今天在看webpack官网的指南时候，发现各部分练习的代码挺不一样，又想起之前看angularjs时官网给出的phonecat，他们项目各个构建步骤被创建成一个个branch，感觉十分方便，所以我仿照试下
 
