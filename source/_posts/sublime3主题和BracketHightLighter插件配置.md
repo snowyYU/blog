@@ -7,6 +7,8 @@ categories: sublime
 
 sublime有很高的配置性，这里说下他的主题部分和插件(BracketHightLighter)的相关配置。
 
+<!--more-->
+
 # sublime主题 #
 
 我的sublime版本为3126
