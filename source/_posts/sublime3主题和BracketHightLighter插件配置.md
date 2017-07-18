@@ -115,7 +115,8 @@ BracketHightLighter插件默认是使用下划线的（underline）
 
 color属性值为brackethighlighter.curly，这个在哪呢
 
-首先要找到正在使用的主题
+首先要找到正在使用的主题,打开Packages文件夹，再打开User  >  Preferences.sublime-settings
+第一行就是正在使用的主题配置
 
 之后(Preferences  >  Browse Packages)打开Packages文件夹，User  >   Color Highlighter    >   themes
 
