@@ -89,4 +89,20 @@ name 为远程主机的名字
 
 其实此时远程仓库中并没有XXX分支，执行此命令后，远程仓库会新建XXX分支，并push成功。 
 
+# git rebase #
 
+自己尝试更新folk到自己github上仓库时查到的这个命令，先上个链接
+
+>[How do I update a GitHub forked repository?](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
+
+第一个答案大意就是，
+
+1. 从自己的GitHub上clone至本地工作目录
+2. 在本地添加remote，即从哪folk来的(这里先叫upstream)，
+3. fetch upstream上的所有分支
+4. 切换到本地的master分支
+5. 将upstream上需要同步的分支rebase
+
+我觉得rebase和merge差不多，区别可能是rebase不会留下痕迹，merge需要输入message啥的
+
+>[git rebase](http://blog.csdn.net/hudashi/article/details/7664631/)
