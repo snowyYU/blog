@@ -18,6 +18,19 @@ angular2以上用了typescript开发，怎么说呢，也要学习下ts的语法
 ## 问题 ##
 
 # angular #
+## 资料部分 ##
+
+## 问题 ##
+
+### service可以用作单例对象吗 ###
+angular中的service我觉得只是用injectable装饰器修饰的一个类，既然是类的话
+
+### angular组件间的通信 ###
+
+通过router传参是个方法
+
+
+
 
 ## 资料部分 ##
 >官方文档炒鸡重要啊
