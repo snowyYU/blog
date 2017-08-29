@@ -119,3 +119,19 @@ reject(失败)时。此时会调用 onRejected
 
 * "unresolved" - Pending
 既不是resolve也不是reject的状态。也就是promise对象刚被创建后的初始化状态等
+
+## Promise.all ##
+
+Promise.all 接收一个 promise对象的数组作为参数，当这个数组里的所有promise对象全部变为resolve或reject状态的时候，它才会去调用 .then 方法。
+
+    Promise.all([promise1,promise2],...).then(res=>{})
+
+res接收各个结果组成的数组，
+
+个人觉得这个会应用于接口间顺序的请求渲染，比如编辑页面的初始渲染可能会依赖于一些字典接口查询后的结果。或者对多个接口数据请求后的统一处理。
+
+## Promise.race ##
+
+Promise.race 也同样接收一个promise对象的数组作为参数，区别是Promise.race只要有一个promise对象进入 FulFilled 或者 Rejected 状态的话，就会继续进行后面的处理
+
+>这样的话，之后的then或catch接收的参数就只有最快进入FulFilled 或 Rejected 状态的promise返回的数据了
