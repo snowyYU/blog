@@ -19,6 +19,11 @@ angular2以上用了typescript开发，怎么说呢，也要学习下ts的语法
 
 ## 问题 ##
 
+### setter和getter ###
+
+### 对类中
+
+
 # angular #
 ## 资料部分 ##
 1. [angular中文网](https://angular.cn/)相当好，每个翻译都有对应的英文
