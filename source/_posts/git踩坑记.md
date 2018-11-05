@@ -72,7 +72,7 @@ name 为远程主机的名字
 
 ![gitDiff](http://i.imgur.com/QJamb2Z.jpg)
 
-# 创建,切换分支 #
+# 创建,切换分支 ,删除#
 
 今天在看webpack官网的指南时候，发现各部分练习的代码挺不一样，又想起之前看angularjs时官网给出的phonecat，他们项目各个构建步骤被创建成一个个branch，感觉十分方便，所以我仿照试下
 
@@ -88,6 +88,14 @@ name 为远程主机的名字
     git push origin XXX
 
 其实此时远程仓库中并没有XXX分支，执行此命令后，远程仓库会新建XXX分支，并push成功。 
+
+    git branch -D XXX
+
+删除本地的XXX分支
+
+    git push origin :XXX
+
+删除远程的XXX分支
 
 # git rebase #
 
