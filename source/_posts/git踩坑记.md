@@ -114,3 +114,10 @@ name 为远程主机的名字
 我觉得rebase和merge差不多，区别可能是rebase不会留下痕迹，merge需要输入message啥的
 
 >[git rebase](http://blog.csdn.net/hudashi/article/details/7664631/)
+
+## 后续 ##
+针对更新自己folk的仓库，官方后来又给出了web版本的方案，上面的是需要本地仓库的，先上链接
+
+>[www](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
+
+大致就是自己从源向自己folk的仓库发起 pull request,然后合并
