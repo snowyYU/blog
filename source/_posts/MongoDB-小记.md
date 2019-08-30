@@ -5,7 +5,9 @@ tags: ["DataBase","MongoDB"]
 categories: "DataBase"
 ---
 
-主要是记录下我学习MongoDB的过程和遇到的问题，以供后续的查阅和学习
+主要是记录下我学习MongoDB的过程和遇到的问题，以供后续的查阅和学习，持续改进吧
+
+<!--more-->
 
 # 安装 #
 
@@ -24,6 +26,8 @@ categories: "DataBase"
 ```
 mkdir -p /data/db
 ```
+如果运行 `ps -xa | grep mongod`，没有看到一个 `dbpath` 显式地告诉mongod查看该数据库位置的参数，并且你的mongodb.conf中没有数据库路径，那么默认数据存储位置就是如上
+
 >顺便说 `cd /` 命令可以直接进入根目录
 
 # 使用 #
