@@ -67,6 +67,8 @@ tags: [Linus]
 
 远程连接，看例子 `ssh root@119.21.241.41`
 
+> `ssh -p 10229 root@119.21.241.41`  
+
 有几个相关的小点需要注意
 * `cat /etc/hostname` 查看主机名，可用vim修改
 * `cat /etc/ssh/sshd_config` 查看 **ssh** 服务的配置，可用vim修改
