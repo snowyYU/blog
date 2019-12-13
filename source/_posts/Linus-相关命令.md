@@ -18,8 +18,10 @@ tags: [Linus]
 
 * `cd /` 为进入根目录下
 * `ls` 列出当前目录下所有文件名称
+
 ## mkdir ##
 创建一个目录
+
 ## touch ##
 
 创建一个文件，注意区别 `mkdir` 命令
@@ -27,6 +29,7 @@ tags: [Linus]
 查看文件内容
 
 > 比如 `cat test.txt`
+
 ## echo ##
 向文件中添加或覆盖内容
 
@@ -38,6 +41,7 @@ tags: [Linus]
 删除文件
 * 删除目录使用 `rm -r` 命令
 > 注意 `rm -rf` 是强制删除命令，慎用，会造成误删后无法恢复的问题
+
 ## vi ##
 
 用 **vim** 编辑器编辑文件
@@ -89,6 +93,7 @@ tags: [Linus]
 ### 查看系统服务 ###
 **service 服务名 status**, 比如 
 >`service sshd status` :查询 ssh 服务的运行状态
+
 ### 关闭某个服务 ###
 
 **service 服务名 stop** 
