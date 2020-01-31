@@ -121,3 +121,8 @@ name 为远程主机的名字
 >[www](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)
 
 大致就是自己从源向自己folk的仓库发起 pull request,然后合并
+
+# 遇到ping github.com time out 问题 #
+> 可以在网页中正常访问 github，唯独在终端中连接不了 github，也 ping 不通
+
+喵喵喵？查了半天网上说了一堆关于 proxy 代理的问题，结果我连到手机的热点就可以了，所以下次遇到时尝试切换网络环境
