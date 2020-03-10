@@ -28,6 +28,14 @@ tags: [Linus]
 ## mkdir ##
 创建一个目录
 
+## mv ##
+移动一个文件或文件夹，也可用于更改文件名
+
+>`mv test.txt test` 将 test.txt 文件移动到当前目录下到test文件夹下
+
+>`mv test.txt test1.txt` 将 test.txt 文件名改为test1.txt
+
+
 ## touch ##
 
 创建一个文件，注意区别 `mkdir` 命令
