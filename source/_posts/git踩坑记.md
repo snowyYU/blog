@@ -40,11 +40,29 @@ name 为远程主机的名字
 
 >[知乎git push 的 -u 参数具体适合含义](https://www.zhihu.com/question/20019419)
 
+# 打上标签 tag #
+
+主要有两种方法，配合 `git branch` 进行版本的管理
+
+* `git tag tagName`
+* `git tag -a tagName -m "remarks备注"`
+
+查看`tags`
+
+* `git tag`
+
+> [详情参考](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE)
+
+
+
 # merge 报错 #
 
 今天在pull时出现了一个问题，过程是这样的，我新建了远程仓库时顺带初始化了readme,结果本地pull时报错，如下
+
     fatal: refusing to merge unrelated histories
+
 就是它觉得我两个仓库没啥关联，然后我尝试push，报错如下
+
     $ git push -u origin master
     To https://github.com/snowyYU/center-solution.git
     ! [rejected]        master -> master (non-fast-forward)
@@ -57,6 +75,7 @@ name 为远程主机的名字
 说我本地仓库版本过时啦，叫我先pull
 
 没办法，只能强上了，加上参数
+
     git pull origin master --allow-unrelated-histories
 
 之后会进入vim让我输入commit message，

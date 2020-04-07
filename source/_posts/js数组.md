@@ -130,15 +130,19 @@ concat()拼接数组，直接上例子
 
 slice()接收一个或两个参数，即要返回起始至末尾或者起始和结束位置(不包括)的项，上例子
 
+>注意 `slice()` 方法可以不传参数，看下面例子
+
 >注意参数可以为负值
 
-    var colors = ["red","yellow","blue","green"];
-    var colors3 = colors.slice(1);
-    var colors4 = colors.slice(1,2);
-    var colors5 = colors.slice(-3,-2);  //colors.length-3==1
-    console.log(colors3);   //["yellow", "blue", "green"]
-    console.log(colors4);   //["yellow"]
-
+```javascript
+var colors = ["red","yellow","blue","green"];
+var colorss = colors.slice() // 相当于colors.slice(0)
+var colors3 = colors.slice(1);
+var colors4 = colors.slice(1,2);
+var colors5 = colors.slice(-3,-2);  //colors.length-3==1
+console.log(colors3);   //["yellow", "blue", "green"]
+console.log(colors4);   //["yellow"]
+```
 
 
 >concat()和slice()不会影响原有数组
