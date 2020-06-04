@@ -37,7 +37,10 @@ Mac 升级为 Catalina 系统后，根目录只有读的权限了，也就是不
    `brew services start mongodb-community`
 
 > 顺便说 `cd /` 命令可以直接进入根目录
+<<<<<<< HEAD
 > `cd ~` 进入用户根目录
+=======
+>>>>>>> 3575c5fdccc55be4e8f6a65dc08e1df8b25288f7
 
 # 使用
 
