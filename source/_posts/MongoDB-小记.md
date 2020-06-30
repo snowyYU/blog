@@ -37,10 +37,7 @@ Mac 升级为 Catalina 系统后，根目录只有读的权限了，也就是不
    `brew services start mongodb-community`
 
 > 顺便说 `cd /` 命令可以直接进入根目录
-<<<<<<< HEAD
 > `cd ~` 进入用户根目录
-=======
->>>>>>> 3575c5fdccc55be4e8f6a65dc08e1df8b25288f7
 
 # 使用
 
@@ -64,17 +61,38 @@ Mac 升级为 Catalina 系统后，根目录只有读的权限了，也就是不
 
 还能说啥，重中之重，多多练习
 
+## 授权，创建，修改，查看用户
+
+```
+db.auth('user','pwd')
+db.createUser(user:'',pwd:'',roles:[])
+show users // 查看当前数据库用户
+db.system.users.find() // 查看所有用户
+```
+
+>[详情参考此文](https://zhuanlan.zhihu.com/p/26215701)
+
 ### 查看
 
 查看所有数据库
 
     > show dbs
 
+查看当前数据库的 collections (集合)
+
+    > show collections
+
 ### 创建
 
 创建或进入某个存在的数据库
 
     > use <name>
+
+### 插入
+
+插入一条数据
+
+    > db.collection.insertOne({})
 
 # 参考链接
 
