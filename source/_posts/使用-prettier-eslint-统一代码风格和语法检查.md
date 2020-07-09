@@ -21,11 +21,18 @@ categories: standard
 # Prettier #
 代码美化部分大致包含：触发自动换行的字符数，强制关键词前后加空格
 
+prettier 的大部分规则都是不可配置了，只保留了几个争议特别大的规则给用户配置，比如单引号和双引号的选择，也正因如此，对团队的代码风格上的统一也会更有帮助
+
 ## 风格规范 ##
 
+直接执行如下命令查看
+```bash
+npx prettier --write .
+npx prettier --write app/
+npx prettier --write app/components/Button.js
+npx prettier --write app/**/*.test.js
+```
 ## 安装配置 ##
-
-
 
 1. 使用 `eslint-config-prettier` 覆盖掉 ESLint 的代码风格规则
 
@@ -49,8 +56,8 @@ npm install --save-dev eslint-config-prettier
     "eslintIntegration": true, //
     "stylelintIntegration": true,
     "tabWidth": 2,        // 缩进字符
-    "singleQuote": true,  // 是否开启单引号
-    "semi": false         //
+    "singleQuote": true,  // 要不要单引号
+    "semi": false         // 要不要使用 ;
 }
 ```
 
@@ -59,14 +66,44 @@ npm install --save-dev eslint-config-prettier
 "eslint.format.enable": true,
 ```   
 
+5. 如有需要忽略代码风格
+
+## others ##
+
+### git hook ###
+
+使用 husky 和 lint-staged 来确保每次提交前代码已是格式化后的状态，配置参考如下
+
+```json
+// package.json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": ["eslint --fix", "prettier --write"]
+  }
+}
+```
+
 
 
 
 
 ## about ##
 1. [Prettier](https://prettier.io/docs/en/index.html)
+2. [lint-staged](https://github.com/okonet/lint-staged#readme)
+3. [husky](https://github.com/typicode/husky#readme)
 
 # ESLint #
 
 语法检查部分大致包含：变量检查（重复引用，引入但未使用，声明但未使用。。。），无意义的bind
+
+一般情况下，脚手架都自带了基础的 eslint 配置，所以主要还是注意eslint 的 plugin 的安装配置，参考如下
+
+## about ##
+1. [eslint](https://eslint.org/docs/user-guide/getting-started)
+2. [working-with-plugins](https://eslint.org/docs/developer-guide/working-with-plugins)
 
