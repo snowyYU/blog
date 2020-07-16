@@ -2,7 +2,6 @@
 title: docker入门
 date: 2020-06-29 16:11:52
 tags: docker
-categories: git
 ---
 
 记录些安装，配置，和使用上的一些心得，方便日后查阅

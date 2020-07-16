@@ -86,6 +86,12 @@ ZSH_THEME="robbyrussell"
 ```
 > 其实安装 **on my zsh** 后，原本的 **.zshrc** 文件的内容会被覆盖，新的内容里增加了大量的说明内容，方便了 zsh 相关的配置
 
+# 上照 #
+
+主要是配置了颜色，然后加上背景图片
+
+![image.png](https://i.loli.net/2020/07/16/HvDUlni3opYaTeW.png)
+
 # go2shell #
 
 很好用，集成在finder中，可以快速在当前目录下调出命令行工具
