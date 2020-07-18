@@ -25,6 +25,8 @@ zsh 相关的 **iTerm2** 和 **oh my zsh** 安装，以及相关主题配置
 
 # oh my zsh #
 
+方便安装插件，主题等
+
 ## 安装 ##
 
 通过 curl
@@ -86,11 +88,26 @@ ZSH_THEME="robbyrussell"
 ```
 > 其实安装 **on my zsh** 后，原本的 **.zshrc** 文件的内容会被覆盖，新的内容里增加了大量的说明内容，方便了 zsh 相关的配置
 
+# 插件推荐 #
+
+> 推荐使用 *oh my zsh* 进行安装管理
+
+* **git** 可以快速输入 git 的缩写命令
+
+```bash
+ cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh  // 查看所有的git 缩写命令
+```
+
+* **[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)** 输入对命令正确对话会显示绿色，反之则显示红色
+* **[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)** 类似 fish 的 历史命令记录功能
+
+![image.png](https://i.loli.net/2020/07/18/uqnvWVCp7IFyG9l.png)
+
 # 上照 #
 
 主要是配置了颜色，然后加上背景图片
 
-![image.png](https://i.loli.net/2020/07/16/HvDUlni3opYaTeW.png)
+
 
 # go2shell #
 
