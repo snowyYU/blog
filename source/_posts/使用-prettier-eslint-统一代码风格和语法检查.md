@@ -34,13 +34,13 @@ npx prettier --write app/**/*.test.js
 ```
 ## 安装配置 ##
 
-1. 使用 `eslint-config-prettier` 覆盖掉 ESLint 的代码风格规则
+使用 `eslint-config-prettier` 覆盖掉 ESLint 的代码风格规则
 
 ```
 npm install --save-dev eslint-config-prettier
 ```
 
-2. 向根目录下 .eslintrc 文件中的 **extend** 增加 `"prettier"`
+向根目录下 .eslintrc 文件中的 **extend** 增加 `"prettier"`
 
 ```json
 {
@@ -50,7 +50,9 @@ npm install --save-dev eslint-config-prettier
   ]
 }
 ```
-3. 配置根目录下 .prettierrc 文件如下
+
+配置根目录下 .prettierrc 文件如下
+
 ```json
 {
     "eslintIntegration": true, //
@@ -61,12 +63,13 @@ npm install --save-dev eslint-config-prettier
 }
 ```
 
-4. 配置保存自动格式化，在用户的 `setting.json` 文件中加上如下配置
+配置保存自动格式化，在用户的 `setting.json` 文件中加上如下配置
+
 ```json
 "eslint.format.enable": true,
 ```   
 
-5. 如有需要忽略代码风格
+如有需要忽略代码风格
 
 ## others ##
 
