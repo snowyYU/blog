@@ -66,7 +66,9 @@ npm install --save-dev eslint-config-prettier
 配置保存自动格式化，在用户的 `setting.json` 文件中加上如下配置
 
 ```json
+
 "eslint.format.enable": true,
+
 ```   
 
 如有需要忽略代码风格

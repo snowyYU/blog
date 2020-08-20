@@ -1,7 +1,7 @@
 ---
 title: 浅谈自己对Promise的理解
 date: 2017-08-03 17:54:05
-tags: [js]
+tags: [js,promise]
 categores: js
 ---
 
