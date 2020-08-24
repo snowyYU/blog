@@ -71,11 +71,12 @@ npm install --save-dev eslint-config-prettier
 
 ```   
 
-如有需要忽略代码风格
 
 ## others ##
 
 ### git hook ###
+
+如有需要忽略代码风格
 
 使用 husky 和 lint-staged 来确保每次提交前代码已是格式化后的状态，配置参考如下
 

@@ -198,6 +198,14 @@ git push origin XXX
 
 > [git rebase](http://blog.csdn.net/hudashi/article/details/7664631/)
 
+# git stash
+
+哈哈，这个命令还挺好玩的，能把当前工作区的更改先搁置，最常见的应用就是突然要去到之前的某个版本打个包。
+
+使用 `git stash pop` 取回搁置的更改，继续撸码
+
+> 如果更改中有 untrack 的文件，需要加上 `-u` 参数，即 ` git stash -u ` 才能一起 stash 起来
+
 ## 后续
 
 针对更新自己 folk 的仓库，官方后来又给出了 web 版本的方案，上面的是需要本地仓库的，先上链接
