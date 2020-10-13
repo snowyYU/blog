@@ -117,6 +117,14 @@ scp  -r local_dir username@servername:remote_dir
 **tar zcvf** 参数解释，**c** 代表压缩，其余解释和上文一致
 > 需要注意，**tar zcvf** 后跟两个参数，第一个参数为压缩后的文件名，第二个参数为需要被压缩的文件，例如把 **apache-tomcat-9.0.17** 压缩成 **apache-tomcat.tar.gz** 使用 `tar zcvf apache-tomcat.tar.gz apache-tomcat-9.0.17`
 
+## zip ##
+
+压缩成 zip 后缀文件
+
+```bash
+zip –r filename.zip directory_name
+```
+
 # ssh #
 
 远程连接，看例子 `ssh root@119.21.241.41`

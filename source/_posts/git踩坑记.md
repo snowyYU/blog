@@ -96,6 +96,16 @@ name 为远程主机的名字
 
 > [stackoverflow](https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories) >[vim 命令看这里](http://www.jianshu.com/p/eae20fcde419)
 
+## 撤销合并 ##
+
+```
+git merge --abort
+```
+
+有时候拉代码，合并，结果整个文件到处是冲突，可以使用此命令撤销到合并前的状态
+
+> 一般这种情况常见于仓库和本地工作环境有一端代码格式化不同步
+
 # 查看更改处
 
     git diff
