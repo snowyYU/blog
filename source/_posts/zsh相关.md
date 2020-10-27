@@ -90,7 +90,7 @@ ZSH_THEME="robbyrussell"
 
 # 插件推荐 #
 
-> 推荐使用 *oh my zsh* 进行安装管理
+> 推荐使用 *oh my zsh* 进行安装管理，具体安装可查看各插件官网
 
 * **git** 可以快速输入 git 的缩写命令
 
