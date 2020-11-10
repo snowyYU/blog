@@ -42,6 +42,18 @@ name 为远程主机的名字
 
 > [知乎 git push 的 -u 参数具体适合含义](https://www.zhihu.com/question/20019419)
 
+```bash
+git push origin --all
+```
+上面命令表示，将所有本地分支都推送到origin主机。如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做` git pull `合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用 `–-force `选项。
+
+```bash
+git push origin --tags
+```
+
+`git push `不会推送标签(tag)，除非使用 `-–tags` 选项
+
+
 # 打上标签 tag
 
 主要有两种方法
