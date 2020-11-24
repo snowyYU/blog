@@ -41,6 +41,8 @@ tags: ['angular','vue']
 ## 脚手架 ##
 
 * **angular** 的脚手架非常强大，可以使用其中的命令创建，删除 module，service，component，route 等，并且有自动注入的功能，推荐使用命令创建模块组件等
+
+> 经常会给脚手架命令加上参数，比如 `ng new routing-app --routing` 生成一个带有应用路由模块（AppRoutingModule）的基本 Angular 应用
 * **vue** 等脚手架没有这么多辅助开发等命令，不过可以使用 ` vue ui ` 打开一个项目的可视化管理页面，进行包的增删操作等
 
 ![WX20201105-152425@2x.png](http://ww1.sinaimg.cn/large/40c136bfgy1gkebrx59lkj22l61jogwc.jpg)
