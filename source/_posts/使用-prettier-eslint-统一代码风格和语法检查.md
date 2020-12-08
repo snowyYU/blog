@@ -1,7 +1,7 @@
 ---
 title: 使用 prettier + eslint 统一代码风格和语法检查
 date: 2020-07-03 16:59:07
-tags: [vscode,IDE]
+tags: [vscode,IDE,standard]
 categories: standard
 ---
 
