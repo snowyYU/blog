@@ -21,9 +21,71 @@ categories: standard
 ```bash
 npm install eslint --save-dev  
 ```
+
+配置下 eslint，新增 .eslintrc.js 和 .eslintignore 文件，配置如下
+
+> 如果需要支持 typescript，还需 `npm i -d @typescript-eslint/parser @typescript-eslint/eslint-plugin`
+
+```javascript
+// eslint.js  
+// for ts //考虑到小程序初始化ts时已有的ts代码通过不了此配置下的校验，所以使用 ts 版本的 precommit 要慎重
+module.exports = {
+  parser: '@typescript-eslint/parser', //定义ESLint的解析器
+  extends: ['plugin:@typescript-eslint/recommended'], //定义文件继承的子规范
+  plugins: ['@typescript-eslint'], //定义了该eslint文件所依赖的插件
+  env: {
+    //指定代码的运行环境
+    browser: true,
+    node: true,
+  },
+}
+
+// for js
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    commonjs: true,
+    es2021: true,
+  },
+  extends: 'eslint:recommended',
+  //全局变量
+  globals: {
+    __DEV__: true,
+    __WECHAT__: true,
+    __ALIPAY__: true,
+    App: true,
+    Page: true,
+    Component: true,
+    Behavior: true,
+    wx: true,
+    getApp: true,
+    getCurrentPages: true,
+  },
+  rules: {
+    'no-debugger': 'off',
+    'no-unused-vars': 'off',
+  },
+}
+```
+
+
+
 ```bash
 npm install prettier --save-dev 
 ```
+新增 prettierrc.js 文件，配置如下
+```javascript
+module.exports = {
+  eslintIntegration: true,
+  stylelintIntegration: true,
+  tabWidth: 2,
+  singleQuote: true,
+  semi: false,
+}
+
+```
+
 
 执行 lint-stage 的安装配置命令，此命令会同时安装并配置 husky 
 

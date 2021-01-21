@@ -57,16 +57,37 @@ Mac 升级为 Catalina 系统后，根目录只有读的权限了，也就是不
 
 连接数据库，可以输入查询语句了
 
+
+> 自己的阿里云使用了 docker 版本的 mongodb，所以在这里记录下进入 docker 版本 mongodb 的命令
+
+```bash
+docker exec -it mongotest_mongo_1 mongo # docker exec -it #容器名 mongo
+```
+
+
 ## 操作部分
 
 还能说啥，重中之重，多多练习
 
-## 授权，创建，修改，查看用户
+## 用户的授权，创建，修改，查看用户
 
+
+
+```bash
+# 选择管理员用户
+use admin
 ```
+```bash
 db.auth('user','pwd')
+```
+```bash
 db.createUser(user:'',pwd:'',roles:[])
-show users // 查看当前数据库用户
+# 示例 db.createUser({user:'owner',pwd:'yu321',roles:[{role:'dbOwner',db:'filemanagedb'}]})
+```
+``` bash
+show users # 查看当前数据库用户
+```
+```bash
 db.system.users.find() // 查看所有用户
 ```
 
