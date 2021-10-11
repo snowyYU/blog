@@ -45,14 +45,14 @@ name 为远程主机的名字
 ```bash
 git push origin --all
 ```
-上面命令表示，将所有本地分支都推送到origin主机。如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做` git pull `合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用 `–-force `选项。
+
+上面命令表示，将所有本地分支都推送到 origin 主机。如果远程主机的版本比本地版本更新，推送时 Git 会报错，要求先在本地做`git pull`合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用 `–-force `选项。
 
 ```bash
 git push origin --tags
 ```
 
 `git push `不会推送标签(tag)，除非使用 `-–tags` 选项
-
 
 # 打上标签 tag
 
@@ -108,7 +108,7 @@ git push origin --tags
 
 > [stackoverflow](https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories) >[vim 命令看这里](http://www.jianshu.com/p/eae20fcde419)
 
-## 撤销合并 ##
+## 撤销合并
 
 ```
 git merge --abort
@@ -149,6 +149,8 @@ git checkout .
 ```
 git clean -xdf
 ```
+
+> 注意：此方法同样会清除掉 .gitignore 文件中的忽略文件，比如常见的 node_modules 文件
 
 如果已经 `add` 之后，想要撤销
 
@@ -226,7 +228,7 @@ git push origin XXX
 
 使用 `git stash pop` 取回搁置的更改，继续撸码
 
-> 如果更改中有 untrack 的文件，需要加上 `-u` 参数，即 ` git stash -u ` 才能一起 stash 起来
+> 如果更改中有 untrack 的文件，需要加上 `-u` 参数，即 `git stash -u` 才能一起 stash 起来
 
 ## 后续
 
