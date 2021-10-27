@@ -150,7 +150,9 @@ git checkout .
 git clean -xdf
 ```
 
-> 注意：此方法同样会清除掉 .gitignore 文件中的忽略文件，比如常见的 node_modules 文件
+> 注意：-x 会清除掉 .gitignore 文件中的忽略文件，比如常见的 node_modules 文件
+
+详情见 [Here's How to Clean Git and Remove Untracked Files](https://www.makeuseof.com/git-clean/)
 
 如果已经 `add` 之后，想要撤销
 
