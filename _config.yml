@@ -5,14 +5,15 @@
 # Site
 title: snowyYU
 subtitle: dream passionately
-description: Front End
+description: dream passionately
+# description: Front End
 author: snowyYU
 language: zh-Hans
-timezone: CN
+timezone: Asia/Hong_Kong
 # avatar:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://snowyyu.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
