@@ -194,6 +194,12 @@ git reset --hard commit_id //撤销之后，所做的已经commit的修改将会
 
 现在就切换到 XXX 分支了，可以在 gitbash 中看到，然后我直接
 
+一般情况下直接 clone 的项目只有 master 分支，想要获取远程别的分支代码还需要在本地检出一个分支，然后建立映射，这两步可以使用一条命令完成
+
+```bash
+git checkout -b 本地分支名 origin/远程分支名
+```
+
 git push origin XXX
 
 其实此时远程仓库中并没有 XXX 分支，执行此命令后，远程仓库会新建 XXX 分支，并 push 成功。
