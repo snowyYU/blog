@@ -9,6 +9,10 @@ categories: git
 
 <!--more-->
 
+# credentials helper
+
+> [Git – Config Username & Password – Store Credentials](https://www.shellhacks.com/git-config-username-password-store-credentials/)
+
 # 将文件移除监听队列
 
 git 中如果文件已被加入跟踪队列，后续添加相应的.gitignore 参数时其相应的改变仍会被监听，采用如下
