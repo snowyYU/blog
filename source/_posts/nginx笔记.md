@@ -46,6 +46,8 @@ nginx -s signal
 
 ## 配置
 
+> 有时可能会登录一个不熟悉的服务器，需要看下 nginx 配置的位置，可使用 `nginx -t` 命令查看下位置
+
 在 mac 系统中，相关的几个路径
 
 - `/usr/local/etc/nginx/nginx.conf` （nginx 配置文件路径）
