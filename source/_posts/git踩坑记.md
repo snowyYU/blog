@@ -58,6 +58,10 @@ git push origin --tags
 
 `git push `不会推送标签(tag)，除非使用 `-–tags` 选项
 
+# pull，pull，pull
+
+> [拉取所有远端仓库分支](https://blog.csdn.net/Benz_s600/article/details/113558741)
+
 # 打上标签 tag
 
 主要有两种方法
@@ -203,6 +207,9 @@ git reset --hard commit_id //撤销之后，所做的已经commit的修改将会
 ```bash
 git checkout -b 本地分支名 origin/远程分支名
 ```
+
+特殊特殊的情况下，可以参照如下
+![WeChatba7757c34f139a3d58351d117f5c8063](https://tvax2.sinaimg.cn/large/40c136bfgy1gzhrln1bjbj20va0mswwn.jpg)
 
 git push origin XXX
 
