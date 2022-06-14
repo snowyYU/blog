@@ -128,13 +128,32 @@ git merge --abort
 
 # 查看更改处
 
-    git diff
+    git diff [<options>] [<commit> [<commit>]] [--] [<path>...]
 
 上图:
 
 ![gitDiff](http://i.imgur.com/QJamb2Z.jpg)
 
 这样只会对比当前工作区和所在分支最新 commit 的改动处，需要对比远程分支，可以看 [参考链接](#参考链接)
+
+查看单独一个文件的修改历史
+
+```bash
+1. git log filename
+
+可以看到fileName相关的commit记录
+
+
+
+2. git log -p filenam
+
+可以显示每次提交的diff
+
+
+
+3. git show c5e69804bbd9725b5dece57f8cbece4a96b9f80b filename
+只看某次提交中的某个文件变化，可以直接加上fileName
+```
 
 # 撤销更改
 
