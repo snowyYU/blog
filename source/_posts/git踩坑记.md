@@ -126,6 +126,19 @@ git merge --abort
 
 > 一般这种情况常见于仓库和本地工作环境有一端代码格式化不同步
 
+## 处理合并冲突
+
+正常情况下可以通过 IDE 自带的冲突处理工具完成，不过需要手动处理每一个冲突
+
+如果想无脑使用当前分支或者 incoming 状态的分支来处理冲突，可以参照如下
+
+```
+git checkout branchA
+git merge -X theirs branchB
+```
+
+详情见 [Is there a "theirs" version of "git merge -s ours"?](https://stackoverflow.com/questions/173919/is-there-a-theirs-version-of-git-merge-s-ours)
+
 # 查看更改处
 
     git diff [<options>] [<commit> [<commit>]] [--] [<path>...]
