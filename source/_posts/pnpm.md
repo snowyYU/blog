@@ -40,3 +40,11 @@ Run "npm help init" for more info
 ### npx 命令
 
 > [npx 使用](https://www.ruanyifeng.com/blog/2019/02/npx.html)
+
+### workspace
+
+使用此功能来实现多包管理。
+参考
+
+- [使用 pnpm 构建 Monorepo 项目](https://zhuanlan.zhihu.com/p/373935751)
+- [pnpm workspace](https://pnpm.io/workspaces)

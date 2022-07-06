@@ -5,6 +5,6 @@ tags: [npm]
 ---
 
 项目中 package.json 参数众多，在此作记录。
-原文见[此](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
+原文见[此 (v8)](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
 
 <!--more-->
