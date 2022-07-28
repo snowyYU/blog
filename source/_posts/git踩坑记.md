@@ -158,7 +158,7 @@ git merge -X theirs branchB
 
 
 
-2. git log -p filenam
+2. git log -p filename
 
 可以显示每次提交的diff
 
@@ -166,6 +166,13 @@ git merge -X theirs branchB
 
 3. git show c5e69804bbd9725b5dece57f8cbece4a96b9f80b filename
 只看某次提交中的某个文件变化，可以直接加上fileName
+```
+
+## 查看加入暂存区或者处于 stash 状态下文件的变更
+
+```bash
+git diff --cached filename
+git diff --stage filename
 ```
 
 # 撤销更改
@@ -254,6 +261,12 @@ git push origin XXX
     git push origin :XXX
 
 删除远程的 XXX 分支
+
+```bash
+git push -d <remote_name> <branchname>
+```
+
+> 直接删除远程的默认分支会不成功，可以先设置别的分支为默认分支，然后再删除
 
 # git rebase
 
