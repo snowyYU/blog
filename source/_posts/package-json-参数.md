@@ -8,3 +8,7 @@ tags: [npm]
 原文见[此 (v8)](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
 
 <!--more-->
+
+## dependencies 中的版本符号说明
+
+> 原文见 [此](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#dependencies)
