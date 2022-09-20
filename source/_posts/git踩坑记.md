@@ -62,7 +62,9 @@ git push origin --tags
 
 > [拉取所有远端仓库分支](https://blog.csdn.net/Benz_s600/article/details/113558741)
 
-# 打上标签 tag
+# tag
+
+## 打上标签
 
 主要有两种方法
 
@@ -78,6 +80,21 @@ git push origin --tags
 `git branch <new-branch> <tag-name>` 进行版本的管理
 
 > [详情参考](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE)
+
+## 删除标签
+
+在 Git v1.7.0 之后，可以使用这种语法删除 tag
+
+```bash
+git push origin --delete tag <tagName>
+```
+
+另一种删除 tag 的方法，推送一个空 tag 到远程 tag:
+
+```bash
+git tag -d <tagName>
+git push origin :refs/tags/<tagName>
+```
 
 # log 和 reflog 命令
 
@@ -258,19 +275,24 @@ git checkout -b 本地分支名 origin/远程分支名
 特殊特殊的情况下，可以参照如下
 ![WeChatba7757c34f139a3d58351d117f5c8063](https://tvax2.sinaimg.cn/large/40c136bfgy1gzhrln1bjbj20va0mswwn.jpg)
 
-git push origin XXX
-
 其实此时远程仓库中并没有 XXX 分支，执行此命令后，远程仓库会新建 XXX 分支，并 push 成功。
 
-    git branch -D XXX
+```bash
+git push origin XXX
+```
 
 删除本地的 XXX 分支
 
-    git push origin :XXX
+```bash
+git branch -D XXX
+```
 
 删除远程的 XXX 分支
 
 ```bash
+#方法一
+git push <remote_name> :<branchname>
+#方法二
 git push -d <remote_name> <branchname>
 ```
 
