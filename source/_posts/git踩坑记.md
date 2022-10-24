@@ -73,7 +73,12 @@ git push origin --tags
 
 查看`tags`
 
-- `git tag`
+```bash
+git tag  // 只会显示标签命
+git tag -n // 加上 -n[<n>] 会显示 n 行标签注释
+git tag -n9  // 显示 9行标签加说明，每个标签占一行
+git tag -l --format="%(tag)"$'\n'"%(contents)"  // 可以自定义显示内容格式
+```
 
 从 tag 处开一个分支
 
