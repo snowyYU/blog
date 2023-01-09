@@ -230,6 +230,7 @@ git clean -xdf
 > 注意：-x 会清除掉 .gitignore 文件中的忽略文件，比如常见的 node_modules 文件
 
 详情见 [Here's How to Clean Git and Remove Untracked Files](https://www.makeuseof.com/git-clean/)
+还有 [掘金，查看删除列表](https://juejin.cn/post/7028207204658315300)
 
 如果已经 `add` 之后，想要撤销
 
